@@ -1,0 +1,2875 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>What is it doing? · Human–AI Design Language</title><style>
+:root{color-scheme:dark;--cxi-dark-blue:#255194;--cxi-cyan:#00CCFE;--cxi-teal:#25CBCB;--cxi-light-blue:#ABEFFF;--cxi-green:#00FF84;--bg:#0b1220;--ink:#f1f7fc;--muted:#a7b9cc;--dim:#8398b2;--line:#293d55;--accent:var(--cxi-cyan);--paper:#edf7fc;--header:98px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.65}*{box-sizing:border-box}html{scroll-padding-top:var(--header)}body{margin:0;background:var(--bg);color:var(--ink)}a{color:inherit;text-underline-offset:5px}a:hover{color:var(--accent)}a:focus-visible{outline:2px solid var(--accent);outline-offset:6px}h1,h2,p{margin:0}h1,h2{font-weight:400;letter-spacing:-.04em;line-height:1.15}h1,.statement{font-family:Georgia,'Times New Roman',serif}main{display:block}.skip{position:fixed;top:8px;left:8px;z-index:30;background:var(--ink);color:var(--bg);padding:8px 15px;transform:translateY(-200%)}.skip:focus{transform:none}.story-header{position:fixed;inset:0 0 auto;z-index:20;height:var(--header);background:#0b1220fa;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.header-inner{max-width:1600px;margin:auto;padding:0 48px;display:grid;grid-template-columns:170px 1fr;gap:55px;height:100%}.brand{font-size:13px;line-height:1.4;letter-spacing:-.015em;align-self:center}.brand span{display:block;color:var(--muted)}.story-location{min-width:0;display:flex;flex-direction:column;justify-content:center}.story-nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px}.story-nav a{font-size:11px;line-height:1.4;color:var(--dim);text-decoration:none;padding:0 0 11px;position:relative;border-bottom:1px solid var(--line)}.story-nav a[aria-current=page]{color:var(--accent)}.story-nav a.completed{color:var(--muted)}.story-nav a:after{content:'';position:absolute;height:1px;left:0;bottom:-1px;width:0;background:var(--accent)}.story-nav a.completed:after{width:100%;background:#255194}.story-nav a[aria-current=page]:after{width:var(--progress,0%)}.story-context{font-size:10px;color:var(--muted);padding-top:9px;display:flex;gap:10px;align-items:center;min-height:24px;line-height:1.4}.story-context .divider{color:#48617d}main{padding-top:var(--header)}.fold{min-height:calc(100svh - var(--header));position:relative;scroll-margin-top:0}.intro-fold{display:flex;align-items:center;max-width:1400px;margin:auto;padding:75px 9%}.intro-fold h1{font-size:clamp(46px,5.6vw,83px);max-width:1050px}.intro-fold h1 em{font-weight:400;color:var(--accent)}.scroll-hint{position:absolute;bottom:35px;font-size:11px;color:var(--dim);display:flex;gap:17px;align-items:center}.philosophy{border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:none}.philosophy>.inner{max-width:1050px;margin:0 auto}.statement{font-size:clamp(38px,4.25vw,63px);line-height:1.27;max-width:1050px}.statement em{font-style:normal;color:var(--accent)}.questions-fold{max-width:1250px;margin:auto;padding:60px 8%;display:flex;flex-direction:column;justify-content:center}.questions-fold h2{font-size:clamp(29px,3.1vw,45px);max-width:900px;margin-bottom:37px}.questions-fold h2 span{display:block;color:var(--muted);font-size:16px;line-height:1.6;letter-spacing:0;margin-bottom:11px}.question-list{border-top:1px solid var(--line)}.question-list a{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:20px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:clamp(17px,1.75vw,25px);letter-spacing:-.025em}.question-list .arrow{color:var(--dim);font-size:22px}.question-list a:hover .arrow{color:var(--accent)}.example-fold{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:64px;align-items:center;padding:56px 48px;max-width:1600px;margin:auto;border-bottom:1px solid var(--line)}.animation-stage{width:100%;height:clamp(340px,65svh,780px);border-radius:5px;background:var(--paper);display:grid;place-content:center;position:relative;overflow:hidden;color:#54718e}.placeholder{display:grid;justify-items:center;gap:19px;font-size:11px;letter-spacing:.03em;color:#54718e}.placeholder-mark{width:43px;height:32px;border-left:1px solid #98b5cc;border-right:1px solid #98b5cc;position:relative}.placeholder-mark:before{content:'';position:absolute;inset:0;background:linear-gradient(#98b5cc,#98b5cc) top left/7px 1px no-repeat,linear-gradient(#98b5cc,#98b5cc) bottom left/7px 1px no-repeat,linear-gradient(#98b5cc,#98b5cc) top right/7px 1px no-repeat,linear-gradient(#98b5cc,#98b5cc) bottom right/7px 1px no-repeat}.example-copy{padding-right:14px;max-width:395px}.example-copy h1,.example-copy h2{font-family:var(--serif,Georgia,'Times New Roman',serif);font-size:clamp(29px,3vw,44px);line-height:1.18;margin-bottom:23px}.example-copy p{font-size:17px;line-height:1.85;color:var(--muted);max-width:350px}.animation-stage:has(video),.animation-stage:has(img),.animation-stage:has(iframe){display:block}.animation-stage img,.animation-stage video,.animation-stage iframe{height:100%;width:100%;border:0;object-fit:contain;display:block}.animation-stage audio{width:min(550px,90%)}.next-chapter{padding:55px 48px 62px;max-width:1600px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:30px}.next-chapter p{font-size:11px;color:var(--dim);margin-bottom:8px}.next-chapter a{font-size:24px;line-height:1.4;text-decoration:none;letter-spacing:-.025em}.next-chapter .research-link{font-size:11px;color:var(--muted);letter-spacing:0}.research-fold{display:flex;align-items:center;justify-content:center;padding:70px 9%}.research-content{max-width:920px;width:100%}.research-content h1{font-size:clamp(42px,5vw,70px);max-width:850px}.research-content>p{font-size:20px;color:var(--muted);line-height:1.8;max-width:650px;margin-top:30px}.research-content .status{font-size:12px;color:var(--accent);margin-top:28px}.research-content .research-link{font-size:12px;color:var(--muted);display:inline-block;margin-top:26px}.future-stage{background:transparent;border:1px dashed #255194;color:var(--dim)}.future-stage .placeholder{color:var(--muted)}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(min-width:1700px){.header-inner{padding:0 64px}.example-fold{padding-left:64px;padding-right:64px;gap:80px}.example-copy p{font-size:19px}}
+@media(max-width:1000px){:root{--header:101px}.header-inner{padding:0 28px;grid-template-columns:140px 1fr;gap:25px}.story-nav{gap:13px}.intro-fold{padding:65px 8%}.intro-fold h1{font-size:60px}.statement{font-size:47px}.example-fold{padding:38px 28px;gap:32px}.example-copy{padding-right:0}.example-copy p{font-size:15px}.example-copy h1,.example-copy h2{font-size:31px}.animation-stage{height:60svh;min-height:340px}.questions-fold{padding:45px 8%}.question-list a{font-size:22px}.next-chapter{padding:40px 28px}.next-chapter a{font-size:21px}}
+@media(max-width:650px){:root{--header:108px}.header-inner{display:block;padding:14px 19px 10px}.brand{font-size:11px;line-height:1.3;margin-bottom:12px}.brand span{display:inline;color:var(--muted);margin-left:4px}.story-nav{gap:12px}.story-nav a{font-size:9px;padding-bottom:7px;white-space:nowrap}.story-context{font-size:9px;padding-top:7px;gap:7px}.intro-fold{padding:46px 27px 80px}.intro-fold h1{font-size:47px;line-height:1.12}.scroll-hint{bottom:28px;font-size:10px}.statement{font-size:36px;line-height:1.35}.questions-fold{padding:34px 27px;min-height:calc(100svh - var(--header))}.questions-fold h2{font-size:31px;margin-bottom:28px}.questions-fold h2 span{font-size:13px;margin-bottom:12px}.question-list a{font-size:18px;padding:18px 0;gap:20px}.question-list .arrow{font-size:19px}.example-fold{grid-template-columns:1fr;gap:25px;padding:32px 22px 40px;align-content:center}.animation-stage{height:42svh;min-height:245px;max-height:430px}.example-copy{max-width:100%}.example-copy h1,.example-copy h2{font-size:32px;margin-bottom:15px}.example-copy p{font-size:15px;line-height:1.8;max-width:450px}.next-chapter{padding:34px 25px 40px;display:block}.next-chapter a{font-size:22px}.next-chapter .research-link{display:inline-block;margin-top:24px;font-size:11px}.research-fold{padding:48px 27px}.research-content h1{font-size:43px}.research-content>p{font-size:17px}.research-content .status{font-size:11px}.placeholder{font-size:10px}.future-stage{min-height:220px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* ---- carousel: several finalized concepts sharing one stage ---- */
+.animation-stage:has(.carousel){display:block;padding:0}
+.carousel{position:absolute;inset:0;display:grid;grid-template-rows:1fr auto}
+.carousel-viewport{position:relative;min-height:0;overflow:hidden}
+.carousel-viewport iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.carousel-bar{display:flex;align-items:center;gap:10px;padding:9px 12px;border-top:1px solid #d4e3ef;background:#e4eff7;color:#2a4763;min-height:44px}
+.carousel-tabs{display:flex;flex:1;gap:6px;overflow-x:auto;scrollbar-width:none}
+.carousel-tabs::-webkit-scrollbar{display:none}
+.carousel-tab{flex:0 0 auto;font:inherit;font-size:11px;letter-spacing:.02em;line-height:1.3;color:#54718e;background:none;border:1px solid transparent;border-radius:3px;padding:5px 10px;cursor:pointer;white-space:nowrap}
+.carousel-tab:hover{color:#16344f;background:#d5e7f3}
+.carousel-tab[aria-selected="true"]{color:#0b2136;background:#fff;border-color:#bcd4e5}
+.carousel-tab .k{font-variant-numeric:tabular-nums;color:#7a93ab;margin-right:6px}
+.carousel-tab[aria-selected="true"] .k{color:#255194}
+.carousel-step{flex:0 0 auto;width:28px;height:28px;display:grid;place-items:center;font-size:13px;color:#54718e;background:#fff;border:1px solid #c6dae8;border-radius:3px;cursor:pointer}
+.carousel-step:hover{color:#0b2136;border-color:#8fb3cc}
+.carousel-count{flex:0 0 auto;font-size:10px;letter-spacing:.06em;color:#7a93ab;font-variant-numeric:tabular-nums}
+.carousel :focus-visible{outline:2px solid #255194;outline-offset:2px}
+@media(max-width:650px){
+  .carousel-bar{padding:7px 8px;gap:7px;min-height:40px}
+  .carousel-tab{font-size:10px;padding:4px 8px}
+  .carousel-count{display:none}
+}
+@media print{.carousel-bar{display:none}}
+/* ---- the easing tokens the components were authored against ----
+   v2.1 declares these at :root and its components reference them 29 times --
+   the badge mark's travel between the reply and the input is transition:
+   translate .44s var(--in). Undefined, that whole declaration is invalid and
+   the mark teleports instead of gliding. Carried over verbatim from v2.1. */
+:root{--out:cubic-bezier(.4,0,.7,1);--in:cubic-bezier(.25,.9,.35,1);--o:.55}
+/* ---- host for the Badge and Line marks ----
+   The marks are drawn for a dark ground. The stage is paper, so the component
+   palette is redefined here to the light-theme equivalents the project already
+   settled on: the same hue, darkened until it carries on white (#7dcfff -> #0075ba).
+   Nothing in the marks themselves is changed -- every colour in them is a variable. */
+.mark-host{
+  --hai:#0075ba; --warm:#8a6100;
+  --txt:#16283c; --mut:#4a6076; --dim:#546f89; --faint:#93a8bd;
+  --ln:#cbdcea; --ln2:#aec6db;
+  --bg:#edf7fc; --pan:#ffffff; --f-bg:#ffffff;
+  --f:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  --m:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  color-scheme:light;
+  position:absolute;inset:0;display:grid;place-items:center;
+  padding:18px;overflow:hidden;color:var(--txt);font-family:var(--f);line-height:1.6
+}
+.stageinner{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;max-width:100%;zoom:var(--z,1)}
+@supports not (zoom:2){.stageinner{transform:scale(var(--z,1))}}
+.hai-line{display:block;width:min(300px,94%);height:auto;overflow:visible}
+.hai-line__path,.hai-line line{fill:none;stroke:var(--hai,#7dcfff);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:650px){.mark-host{padding:10px}.stageinner{zoom:1!important;transform:none!important}}
+/* ---------- close ---------- */
+
+
+
+
+
+/* Replay. Deliberately outside the frame: the frame is the customer's own chat
+   window, and a control sitting inside it would read as a product feature. The
+   scripted exchange ends at waiting and stays there, which is the honest
+   terminal state — so getting back to the start needs a control, not a rewind. */
+.replay{margin-top:18px;appearance:none;border:1px solid var(--ln2);background:transparent;
+  color:var(--mut);font:inherit;font-size:12.5px;padding:7px 14px;border-radius:8px;cursor:pointer;
+  transition:color .16s,border-color .16s}
+.replay:hover{color:var(--txt);border-color:#3d5878}
+.replay:focus-visible{outline:2px solid var(--hai);outline-offset:2px}
+
+
+.heroframe{position:relative;display:flex;width:100%;max-width:none;overflow:hidden;
+  border-radius:16px;border:1px solid var(--f-ln);background:var(--f-bg);
+  box-shadow:0 1px 2px rgba(0,0,0,.28),0 20px 46px -12px rgba(0,0,0,.55);
+  color:var(--f-txt);text-align:left;
+  /* One fixed height, set before the conversation starts and never changed by it.
+     A cap was not enough: under a cap the frame is still sized by whichever
+     column is taller, so as the notes filled in, the whole window grew mid-
+     conversation — 314px to 392px in a single run — which no real chat window
+     does. The surplus also had nowhere useful to go, because the conversation
+     was a fixed window and the input is pinned to the bottom, so it collected
+     as dead space above the input while messages were being clipped off the top.
+     Fixed height, and the conversation takes whatever the notes do not (see
+     .feedclip); the notes list scrolls when it outgrows its share (see .notes).
+     Lifted on the stacked mobile layout below. */
+  height:392px}
+.heroframe[data-t="dark"]{
+  --f-bg:#12161d; --f-bg2:#0c1015; --f-ln:#252c37; --f-ln2:#323b47;
+  --f-txt:#eceef1; --f-mut:#9aa3b0; --f-dim:#6b7480;
+  --f-you:#1b2532; --f-youln:rgba(125,207,255,.20); --f-rail:#0a0d12;
+  /* The error voice, and it is the same red the failed mark turns. It was a warm
+     amber, on the reasoning that a failed lookup is not a danger — but that amber
+     was inside the range the component colour can be set to, so a failed mark and
+     a working one could be the same colour. The mark and the words have to agree,
+     which is why this moved with it. 6.85 on this ground. */
+  --f-warn:#f7768e;
+  --hai:#7dcfff}
+.heroframe[data-t="light"]{
+  --f-bg:#ffffff; --f-bg2:#f4f6f8; --f-ln:#e2e6eb; --f-ln2:#cfd5dd;
+  --f-txt:#151a20; --f-mut:#5b6572; --f-dim:#8b939d;
+  --f-you:#eef1f5; --f-youln:rgba(13,124,186,.10); --f-rail:#e6eaef;
+  /* the same voice on the light ground: 7.81 on white, 7.21 on the panel. */
+  --f-warn:#a3161d;
+  --hai:#0d7cba;
+  box-shadow:0 1px 2px rgba(16,22,30,.18),0 20px 46px -14px rgba(16,22,30,.45)}
+
+.rail{width:18px;flex:none;background:var(--f-rail);border-right:1px solid var(--f-ln)}
+.screen{flex:1;min-width:0;display:flex;flex-direction:column;padding:16px 18px 14px}
+
+/* The conversation window: newest at the bottom, older clipped out of the top.
+   It takes all the height the frame has left rather than a fixed amount of it,
+   so surplus space goes into showing more of the conversation instead of
+   collecting as a gap above the input. */
+.feedclip{flex:1;min-height:120px;overflow:hidden;display:flex;align-items:flex-end;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 18px);
+  mask-image:linear-gradient(to bottom,transparent 0,#000 18px)}
+.feed{width:100%;display:flex;flex-direction:column;justify-content:flex-end}
+.feed .row{padding:6px 0;font-size:14px;line-height:1.55;display:flex;opacity:0;translate:0 7px;
+  transition:opacity .44s var(--in),translate .44s var(--in)}
+.feed .row.in{opacity:1;translate:0 0}
+.feed .row--ai{padding-left:60px;justify-content:flex-start}
+.feed .row--ai span{color:var(--f-txt);max-width:min(92%,58ch)}
+.feed .row--you{justify-content:flex-end;text-align:right}
+.feed .row--you span{color:var(--f-txt)}
+.feed .row--trunc span{color:var(--f-mut)}
+/* consecutive chunks of one reply sit tighter than separate turns do */
+.feed .row--chunk{padding-top:1px}
+[data-you="surface"] .feed .row--you{padding:4px 0}
+[data-you="surface"] .feed .row--you span{display:inline-block;background:var(--f-you);
+  box-shadow:inset 0 0 0 1px var(--f-youln);
+  padding:7px 13px;border-radius:13px;max-width:min(80%,52ch);text-align:left}
+[data-you="accent"] .feed .row--you span{color:var(--hai)}
+
+/* Two homes for the mark, 44px each. The mark travels between them, and the
+   travel is a join — same .44s arrival curve as every other handover.
+
+   The home beside the input box stays reserved whether or not the mark is in
+   it, so the input never changes size under your hands. The home up in the
+   conversation does the opposite: it gives its space back when the mark is
+   not there, because an empty band under the last message reads as a fault
+   rather than as somewhere a mark will return to. Nothing else moves when it
+   closes — the messages are a fixed window above it and the input is pinned
+   below, so the space simply returns to the gap between the two. */
+.markhost{width:44px;height:44px;flex:none;position:relative;
+  transition:width .3s var(--in),height .3s var(--in)}
+#hInline.is-away{width:0;height:0}
+.screen .live{display:flex;align-items:center;gap:16px;margin:4px 0 10px}
+.slotmark{position:absolute;inset:0;display:grid;place-items:center}
+.slotmark>.mark{position:absolute;opacity:0;scale:.82;
+  transition:opacity .34s var(--out),scale .34s var(--out)}
+.slotmark>.mark.on{opacity:1;scale:1;
+  transition:opacity .44s var(--in),scale .44s var(--in)}
+.slotmark>.mark.leaving{opacity:0;scale:.6}
+.livetext{font-size:14px;color:var(--f-txt);min-height:22px;display:flex;align-items:center;max-width:min(92%,58ch)}
+.livetext:empty{min-height:0}   /* no reply in flight, no line held open for one */
+.wd{opacity:0;transition:opacity .2s linear}
+.wd.in{opacity:1}
+
+/* ---------- the status line ----------
+   One lane, fixed, in both families. It keeps its height whether or not it has
+   anything to say, because a strip that appears and disappears would shove the
+   conversation about every time the AI changed what it was doing — and this is
+   the one element on the page whose whole job is to be found in the same place.
+   The error voice is a colour and a second line, not a new component. */
+.statline{min-height:17px;display:flex;align-items:flex-start;margin:0 0 7px;
+  font-size:12px;line-height:1.45}
+.hstat{color:var(--f-mut);transition:opacity .28s linear}
+.hstat .what{display:inline}
+.hstat.is-bad .what{color:var(--f-warn)}
+.hstat .msg{color:var(--f-mut);margin-left:5px}
+.hstat .do{margin-left:6px;color:var(--hai);border-bottom:1px solid currentColor;
+  padding-bottom:1px;cursor:default}
+.appfoot{margin-top:auto;display:flex;align-items:center;gap:10px;position:relative}
+.appfoot input{flex:1;min-width:0;background:var(--f-bg2);border:1px solid var(--f-ln);border-radius:10px;
+  color:var(--f-txt);font:inherit;font-size:13px;padding:9px 12px;outline:none}
+.appfoot input:focus{border-color:var(--f-ln2)}
+.appfoot input::placeholder{color:var(--f-dim)}
+.send{width:32px;height:32px;flex:none;border-radius:9px;border:1px solid var(--f-ln);
+  background:var(--f-bg2);display:grid;place-items:center;cursor:default}
+.send svg{width:14px;height:14px;fill:none;stroke:var(--f-mut);stroke-width:1.9;
+  stroke-linecap:round;stroke-linejoin:round}
+.pcaret{position:absolute;width:1.5px;height:16px;background:var(--hai);opacity:0;pointer-events:none}
+.pcaret.on{animation:hcaret 1.05s steps(1) infinite}
+#meas{position:absolute;visibility:hidden;white-space:pre;font:inherit;font-size:13px;left:-9999px;top:0}
+@keyframes hcaret{0%,50%{opacity:1}50.01%,100%{opacity:0}}
+
+/* ---------- right column: two different things ---------- */
+.aside{width:clamp(268px,29%,340px);flex:none;border-left:1px solid var(--f-ln);background:var(--f-bg2);
+  display:flex;flex-direction:column;min-width:0;min-height:0}
+/* With the frame capped, Progress stays fixed and the notes card takes the rest,
+   scrolling its free-note list rather than growing the frame. */
+#placingCard{flex:none}
+.notesdrawer{display:flex;flex-direction:column;min-height:0}
+.notesdrawer .notes{overflow-y:auto}
+.card{padding:15px 18px}
+.card+.card{border-top:1px solid var(--f-ln)}
+.cardl{font:600 9.5px/1 var(--f);letter-spacing:.13em;text-transform:uppercase;
+  color:var(--f-dim);margin-bottom:12px}
+
+/* Orienting — the ported component, driven. One label at a time, rotating,
+   with Next as one of them rather than a separate footer. */
+.pystage{display:flex;align-items:center;gap:14px}
+.pystage .hai-stage__ring{width:52px;height:52px;flex:none}
+.pylabels{position:relative;flex:1;min-width:0;height:22px;overflow:hidden}
+.pyl{position:absolute;left:0;top:0;height:22px;display:flex;align-items:center;gap:6px;
+  white-space:nowrap;font-size:13px;color:var(--f-txt);opacity:var(--o,1);translate:0 0;
+  transition:opacity .44s var(--in),translate .44s var(--in)}
+.pyl.entering{opacity:0;translate:0 7px}
+.pyl.leaving{opacity:0;translate:0 -7px;
+  transition:opacity .34s var(--out),translate .34s var(--out)}
+.pyl em{font-style:normal;color:var(--f-dim);font-size:12px}
+.pyl svg{width:11px;height:11px;flex:none;fill:none;stroke:var(--hai);stroke-width:1.9;
+  stroke-linecap:round;stroke-linejoin:round}
+.pyl.is-next{--o:.55;font-size:12.5px}
+.guess{position:relative;display:inline-block;white-space:nowrap}
+.guess span{display:inline-block;transition:opacity .34s var(--out),translate .34s var(--out)}
+.guess span.g-leaving{opacity:0;translate:0 -6px}
+.guess span.g-entering{opacity:0;translate:0 6px;
+  transition:opacity .44s var(--in),translate .44s var(--in)}
+
+/* ---------- notes: a card on a wide frame, a drawer on a narrow one ----------
+   On a phone the frame has room for one column and the conversation has to be
+   it. The notes are a reference you consult rather than something you watch, so
+   they are the part that becomes a panel you open -- while Orienting, which
+   only makes sense if it is in front of you as the conversation moves, takes
+   the pane above the feed. Both controls are inert until that layout applies. */
+.notesbtn,.notesx{display:none}
+.notesscrim{display:none}
+.notesbtn{align-items:center;gap:6px;appearance:none;border:1px solid var(--f-ln2);
+  background:var(--f-bg);color:var(--f-mut);font:inherit;font-size:10.5px;font-weight:600;
+  letter-spacing:.07em;padding:5px 8px;border-radius:7px;cursor:pointer;flex:none;
+  transition:color .16s,border-color .16s}
+.notesbtn:hover{color:var(--f-txt);border-color:var(--f-dim)}
+.notesbtn svg{width:11px;height:11px;flex:none;fill:none;stroke:currentColor;
+  stroke-width:1.6;stroke-linecap:round}
+/* The count is the whole reason the button can be trusted -- a shut drawer
+   would otherwise hide the fact that anything had been written down. */
+.notesbtn .notesn{font:600 10px/1 var(--m);color:var(--hai);letter-spacing:0}
+.notesbtn .notesn:empty{display:none}
+.notesx{align-items:center;justify-content:center;width:22px;height:22px;flex:none;
+  appearance:none;border:0;padding:0;border-radius:6px;background:transparent;
+  color:var(--f-dim);cursor:pointer}
+.notesx:hover{color:var(--f-txt)}
+.notesx svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+
+/* the notes — what the AI has written down, the way a rep would */
+/* The rest of the list: facts nobody asked for. Same two-line shape as a filled
+   required row -- small dim label, value under it -- and indented to the same
+   label column (box 14px + gap 10px), so the two kinds of row read as one list.
+   The only difference is the absent box, which is the point: there was never
+   anything here to tick off. */
+.notes{flex:1;display:flex;flex-direction:column;min-height:0}
+.note{display:flex;flex-direction:column;gap:1px;padding:3px 0 3px 24px;
+  opacity:0;translate:0 7px;
+  transition:opacity .44s var(--in),translate .44s var(--in)}
+.note.in{opacity:1;translate:0 0}
+.note .k{font-size:11px;color:var(--f-dim);letter-spacing:.01em}
+.note .v{font-size:13px;color:var(--f-txt);line-height:1.4}
+.heroframe[data-fam="1"] .note{padding-left:25px}
+
+/* the notes component. ONE list with two kinds of row.
+   A row that was asked for opens as a label with no value and a hollow box; when
+   the talk surfaces it, the box ticks and the row GROWS ITS VALUE. Not-yet-gathered
+   stays neutral -- it is not an error, and the list is content to rest incomplete.
+   A row nobody asked for arrives with its value already there and carries NO BOX:
+   an empty box would read as "still missing", which is the opposite of true, so the
+   box column is simply absent rather than empty. The count governs only the four. */
+.req{margin-bottom:11px;padding-bottom:11px;border-bottom:1px solid var(--f-ln)}
+.reqhd{display:flex;align-items:center;justify-content:space-between;
+  font:600 9.5px/1 var(--f);letter-spacing:.13em;text-transform:uppercase;color:var(--f-dim);margin-bottom:11px}
+.reqn{font:600 10px/1 var(--m);color:var(--hai);letter-spacing:0}
+.reqrow{display:flex;align-items:flex-start;gap:10px;min-height:27px;font-size:13px;
+  padding:3px 0;transition:min-height .35s var(--in)}
+.reqbox{width:14px;height:14px;border-radius:4px;flex:none;color:var(--f-bg);margin-top:2px;
+  border:1.5px solid var(--f-ln2);background:transparent;display:grid;place-items:center;
+  transition:background .35s var(--in),border-color .35s var(--in)}
+.reqbox svg{width:8px;height:8px;opacity:0;fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;transition:opacity .3s}
+.reqtx{display:flex;flex-direction:column;gap:1px;min-width:0}
+.reqlbl{color:var(--f-dim);transition:color .35s var(--in);line-height:1.35}
+/* The value a row grows once it has been gathered. A 0fr grid track until then,
+   the same mechanism the standalone component uses -- the row is genuinely one line
+   tall and genuinely grows, and the value can be any length without a hard-coded
+   height to keep in step with it. */
+.reqval{display:grid;grid-template-rows:0fr;opacity:0;
+  transition:grid-template-rows .34s var(--in),opacity .4s var(--in)}
+.reqval>span{overflow:hidden;font-size:13px;color:var(--f-txt);line-height:1.4}
+.reqrow.filled .reqval{grid-template-rows:1fr;opacity:1}
+.reqrow.filled .reqbox{background:var(--hai);border-color:var(--hai)}
+.reqrow.filled .reqbox svg{opacity:1}
+.reqrow.filled .reqlbl{font-size:11px;color:var(--f-dim);letter-spacing:.01em}
+
+/* ======================================================================
+   THE HERO IN THE LINE FAMILY
+   Everything here is behind [data-fam="1"] on the frame, so the badge hero
+   (the default) is untouched. Three swaps: the mark beside the reply becomes
+   a wide line under it; the Progress ring becomes a horizontal timeline; the
+   notes checklist becomes a vertical spine. All three are driven by the same
+   functions that drive the badge, so the demo runs identically either way.
+   ====================================================================== */
+/* 1 · the state line — a thin band the width of the input, sitting directly on
+   top of it. A one-cell grid stacks the four members in the same place; the
+   waveforms are stretched (preserveAspectRatio=none in the markup) to a low band
+   so the line stays minimal and full-width rather than tall. The right margin
+   matches the send button + gap, so the band lines up with the input, not the
+   whole composer. */
+.heroline{display:none;margin:0 0 8px}
+.heroline .hln{grid-area:1/1;display:flex;align-items:center;
+  opacity:0;transition:opacity .34s var(--out)}
+.heroline .hln.on{opacity:1;transition:opacity .44s var(--in)}
+.heroline .hai-line{width:100%;height:26px}
+/* margin-top:auto pulls the free space above the line, so the line drops to the
+   bottom and sits on the input; the composer's own auto-margin is dropped in
+   line mode so the two don't split the gap between them. */
+.heroframe[data-fam="1"] .heroline{display:grid;margin:auto 42px 8px 0}
+.heroframe[data-fam="1"] .appfoot{margin-top:0}
+.heroframe[data-fam="1"] .live .markhost{display:none}   /* no badge mark beside the reply */
+/* But the space that mark occupied still has to be kept. Every finished AI
+   message is indented by the width of the badge and its gap; drop that from the
+   reply being written and it starts 60px to the left of the ones above it,
+   which reads as a fault in the alignment rather than as a family difference.
+   Same lead, held by the row instead of by the mark. */
+.heroframe[data-fam="1"] .live{padding-left:60px}
+.heroframe[data-fam="1"] .appfoot .markhost{display:none}/* and no travel target at the composer */
+
+/* 2 · the Progress timeline */
+.hai-linestage{display:none;width:112px;height:20px;flex:none;overflow:visible}
+.heroframe[data-fam="1"] .hai-stage__ring{display:none}
+.heroframe[data-fam="1"] .hai-linestage{display:block}
+.ls-track{stroke:var(--hai);stroke-width:2;opacity:.18}
+.ls-fill{stroke:var(--hai);stroke-width:2;opacity:.85;stroke-linecap:round}
+.ls-dot{fill:var(--hai);stroke:none;opacity:.3;transition:opacity .4s var(--in)}
+.ls-dot.is-settled{opacity:.9}
+.ls-dot.is-now{opacity:1}
+.ls-dot.is-intended{opacity:.5;fill:none;stroke:var(--hai);stroke-width:2}
+/* the dot for the label now showing — grows and settles, in step with the label */
+.ls-dot.is-active{opacity:1;animation:ls-pulse 1.7s ease-in-out infinite}
+@keyframes ls-pulse{0%,100%{r:3.4}50%{r:5.4}}
+@media (prefers-reduced-motion:reduce){.ls-dot.is-active{animation:none;r:4.6}}
+
+/* 3 · the notes spine */
+.reqspine{display:none;position:relative}
+.heroframe[data-fam="1"] .reqrows{display:none}
+.heroframe[data-fam="1"] .reqspine{display:block}
+.rsrow{display:flex;align-items:flex-start;gap:12px;min-height:31px;position:relative;
+  padding:3px 0}
+/* the spine runs between node centres, so it has to reach from this row's node to
+   the next one wherever the rows have grown to -- hence bottom:-6px against the
+   row's own padding rather than a fixed height. */
+.rsrow::before{content:"";position:absolute;left:5.5px;top:19px;bottom:-6px;width:2px;
+  background:var(--f-ln2)}
+.rsrow:last-child::before{display:none}
+.rsnode{width:13px;height:13px;border-radius:50%;flex:none;z-index:1;margin-top:3px;
+  border:2px solid var(--f-ln2);background:var(--f-bg2);
+  transition:background .35s var(--in),border-color .35s var(--in)}
+.rstx{display:flex;flex-direction:column;gap:1px;min-width:0}
+.rslbl{color:var(--f-dim);font-size:13px;transition:color .35s var(--in);line-height:1.35}
+.rsval{display:grid;grid-template-rows:0fr;opacity:0;
+  transition:grid-template-rows .34s var(--in),opacity .4s var(--in)}
+.rsval>span{overflow:hidden;font-size:13px;color:var(--f-txt);line-height:1.4}
+.rsrow.filled .rsnode{background:var(--hai);border-color:var(--hai)}
+.rsrow.filled .rslbl{font-size:11px;color:var(--f-dim);letter-spacing:.01em}
+.rsrow.filled .rsval{grid-template-rows:1fr;opacity:1}
+
+/* Reduced motion: the notes rest on the same picture, they just arrive already in
+   it. A row growing its value is the one piece of movement here worth suppressing. */
+@media (prefers-reduced-motion:reduce){
+  .reqrow,.reqval,.reqlbl,.reqbox,.reqbox svg,
+  .rsrow,.rsval,.rslbl,.rsnode,.note{transition:none}
+  .note{opacity:1;translate:0 0}
+}
+
+@media (max-width:900px){
+  .heroframe{flex-direction:column;height:auto}   /* stacked: let it grow */
+  .feedclip{flex:none;height:clamp(168px,34vw,224px)}  /* and no column to fill */
+  .notesdrawer .notes{overflow-y:visible}             /* and don't scroll a stacked list */
+  /* order, because the DOM has the aside last -- where it belongs on a wide
+     frame. Orienting is the one thing that has to stay in front of you as
+     the conversation moves, so on a narrow frame it takes the pane on top. */
+  .rail{order:1;width:100%;height:14px;border-right:0;border-bottom:1px solid var(--f-ln)}
+  .aside{order:2;width:100%;border-left:0;border-top:0;border-bottom:1px solid var(--f-ln)}
+  .screen{order:3;padding:14px 15px 12px}
+  .feed .row--ai{padding-left:52px}
+  .heroframe[data-fam="1"] .live{padding-left:52px}   /* the same lead, narrowed */
+  .pylabels{height:auto;min-height:22px}
+
+  #placingCard .cardl{display:flex;align-items:center;justify-content:space-between;
+    gap:12px;margin-bottom:11px}
+  .notesbtn{display:inline-flex}
+  .notesx{display:inline-flex}
+  .notesdrawer .cardl{display:flex;align-items:center;justify-content:space-between;gap:12px}
+
+  /* The drawer is positioned against the frame, not the pane, so it covers the
+     whole window the way a sheet does -- and the frame's own overflow:hidden is
+     what keeps it out of sight when it is shut. visibility rather than opacity
+     alone, so a closed drawer is not reachable by tab or by a screen reader. */
+  .notesdrawer{position:absolute;top:0;right:0;bottom:0;z-index:4;
+    width:min(82%,304px);border-top:0;border-left:1px solid var(--f-ln);
+    background:var(--f-bg2);overflow-y:auto;
+    translate:101% 0;visibility:hidden;
+    transition:translate .34s var(--out),visibility .34s;
+    box-shadow:-16px 0 38px -20px rgba(0,0,0,.5)}
+  .heroframe.notes-open .notesdrawer{translate:0 0;visibility:visible;
+    transition:translate .44s var(--in),visibility 0s}
+
+  .notesscrim{display:block;position:absolute;inset:0;z-index:3;border:0;padding:0;
+    appearance:none;background:rgba(0,0,0,.3);cursor:pointer;
+    opacity:0;visibility:hidden;transition:opacity .34s var(--out),visibility .34s}
+  .heroframe.notes-open .notesscrim{opacity:1;visibility:visible;
+    transition:opacity .44s var(--in),visibility 0s}
+}
+@media (max-width:560px){
+  .feed .row{font-size:13.5px}
+  .feed .row--ai{padding-left:0}
+  .feed .row--ai span,[data-you="surface"] .feed .row--you span{max-width:100%}
+  .livetext{font-size:13.5px;max-width:100%}
+  .screen{padding:12px 13px 11px}
+  .card{padding:13px 15px}
+  .pystage{gap:11px}
+  .pystage .hai-stage__ring{width:44px;height:44px}
+}
+
+/* frame-local overrides of the shared components (light theme, driven ring) */
+.pystage .hai-stage__seg{animation:none!important;
+  transition:stroke-width .44s var(--in),opacity .44s var(--in)}
+.pystage .hai-stage__seg.is-now{stroke-width:6.5;opacity:.9}
+.heroframe[data-t="light"] .hai-halo__dot{opacity:1}
+.heroframe[data-t="light"] .hai-orb{opacity:.9}
+.heroframe[data-t="light"] .hai-stage__seg{opacity:.16}
+.heroframe[data-t="light"] .hai-stage__seg.is-settled{opacity:1}
+.heroframe[data-t="light"] .hai-stage__seg.is-intended{opacity:.46}
+.heroframe[data-t="light"] .hai-stage__seg.is-now{opacity:1}
+/* The old waiting mark had a gate that closed across its opening and a core
+   that pulsed, and both needed lighter values on the light ground. The mark is
+   now a solid turning ring around a still core, which carries at either
+   brightness, so those overrides are gone rather than retuned. */
+
+/* Only the mark that is actually on may carry the failure fade. The others are
+   stacked in the same place at zero opacity, and an animation beats a declared
+   value whatever the specificity — so without this, fading the children would
+   overrule their opacity:0 and bring all four back at once. */
+#slotmark.hai-failed > .mark:not(.on),
+#heroline.hai-failed > .hln:not(.on){animation:none}
+
+
+/* ---------- concept-for-review block ---------- */
+/* auto side margins, like every other block in the hero. Without them the 680px
+   box pins to the left edge of the 1180px content column while its text centres
+   inside itself -- invisible below 1180px, and ~250px out of true above it. */
+/* Held to the thesis box's own width, not a wider one. It sits directly under
+   that box, so any difference reads as the text spilling out of it rather than
+   as a separate block -- and the gap has to be big enough to say "this is a
+   note about the thing above", which 6px did not when the thesis was one
+   paragraph and does not at all now that it is five. */
+.review{max-width:640px;margin:26px auto 4px}
+.review__h{font:600 11px/1 var(--f);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:0 0 13px}
+.review p{font-size:14px;line-height:1.62;color:var(--mut);margin:0}
+/* ---- the hero demo: one exchange, with the indicator live inside it ----
+   The frame carries its own light palette via [data-t="light"], so only the
+   page-level variables the components read are inherited from .mark-host.
+   This fold flows rather than filling a fixed stage: the frame is a fixed 392px
+   on desktop and auto height when it stacks, so the stage sizes to it. */
+.hero-demo-fold .animation-stage{height:auto;min-height:0;padding:0;display:block}
+.hero-demo-fold .carousel{position:static}
+.hero-demo-fold .carousel-viewport{position:static;overflow:visible;min-height:0}
+.hero-host{position:static;display:block;padding:16px 18px 6px;overflow:visible}
+.hero-host .heroframe{margin:0 auto;max-width:1060px}
+.hero-host .replay{margin:12px auto 4px;display:block}
+@media(max-width:650px){.hero-host{padding:9px 9px 4px}}
+.site-footer{border-top:1px solid var(--line);max-width:1600px;margin:auto;padding:26px 48px 40px;font-size:11px;line-height:1.7;color:var(--muted);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.site-footer p{margin:0}.site-footer a{white-space:nowrap;color:var(--muted)}@media(max-width:1000px){.site-footer{padding:22px 28px 34px}}@media(max-width:650px){.site-footer{font-size:10px;gap:10px;flex-direction:column}}@media print{.site-footer{display:none}}@media print{.story-header,.scroll-hint,.next-chapter{display:none}main{padding-top:0}.fold{min-height:auto;break-inside:avoid;padding-top:40px;padding-bottom:40px}.animation-stage{height:350px}}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header class="story-header"><div class="header-inner"><div class="brand">Human–AI<span>Design Language</span></div><div class="story-location"><nav class="story-nav" aria-label="Your place in the story"><a href="index.html" class="completed">Introduction</a><a href="human-ai-activity.html" aria-current="page">Activity</a><a href="human-ai-access.html" >Access</a><a href="human-ai-continuity.html" >Continuity</a><a href="human-ai-motivation.html" >Motivation</a></nav><p class="story-context"><span>Activity</span><span class="divider" aria-hidden="true">/</span><span id="story-position"></span></p></div></div></header><main id="main"><h1 class="sr-only">What is it doing?</h1><section class="fold example-fold hero-demo-fold" id="in-context" data-story-step="In context"><div class="animation-stage" data-demo-slot="activity-hero" role="img" aria-label="One exchange, with the indicator live inside it"><div class="placeholder"><span class="placeholder-mark" aria-hidden="true"></span><span>Animation placeholder</span></div></div><div class="example-copy"><h2>See it in a conversation.</h2><p>The states below are shown on their own. Here they are at work — one exchange, with the indicator carrying every change. Type into the box to interrupt it.</p></div></section><section class="fold example-fold" id="generation" data-story-step="Generation"><div class="animation-stage" data-demo-slot="activity-generation" role="img" aria-label="Generation — animation placeholder"><div class="placeholder"><span class="placeholder-mark" aria-hidden="true"></span><span>Animation placeholder</span></div></div><div class="example-copy"><h2>Generation</h2><p>A reply should never arrive out of nowhere. Show when the AI is preparing it.</p></div></section><section class="fold example-fold" id="working" data-story-step="Working"><div class="animation-stage" data-demo-slot="activity-working" role="img" aria-label="Working — animation placeholder"><div class="placeholder"><span class="placeholder-mark" aria-hidden="true"></span><span>Animation placeholder</span></div></div><div class="example-copy"><h2>Working</h2><p>When the AI needs time, show what it is doing. Only show progress when it can be measured.</p></div></section><section class="fold example-fold" id="waiting" data-story-step="Waiting"><div class="animation-stage" data-demo-slot="activity-waiting" role="img" aria-label="Waiting — animation placeholder"><div class="placeholder"><span class="placeholder-mark" aria-hidden="true"></span><span>Animation placeholder</span></div></div><div class="example-copy"><h2>Waiting</h2><p>When the reply is finished, make it clear that the next move is yours.</p></div></section><section class="fold example-fold" id="listening" data-story-step="Listening"><div class="animation-stage" data-demo-slot="activity-listening" role="img" aria-label="Listening — animation placeholder"><div class="placeholder"><span class="placeholder-mark" aria-hidden="true"></span><span>Animation placeholder</span></div></div><div class="example-copy"><h2>Listening</h2><p>As you speak, show that your input is being received.</p></div></section><section class="fold example-fold" id="handover" data-story-step="Handover"><div class="animation-stage" data-demo-slot="activity-handover" role="img" aria-label="Handover — animation placeholder"><div class="placeholder"><span class="placeholder-mark" aria-hidden="true"></span><span>Animation placeholder</span></div></div><div class="example-copy"><h2>Handover</h2><p>If a person takes over, make the change visible. The AI hands over the conversation to someone else.</p></div></section><section class="fold example-fold" id="yielding" data-story-step="Yielding"><div class="animation-stage" data-demo-slot="activity-yielding" role="img" aria-label="Yielding — animation placeholder"><div class="placeholder"><span class="placeholder-mark" aria-hidden="true"></span><span>Animation placeholder</span></div></div><div class="example-copy"><h2>Yielding</h2><p>You can change direction. When you send a message or interrupt by voice, the AI makes room for you.</p></div></section><section class="fold example-fold" id="error-handling" data-story-step="Error handling"><div class="animation-stage" data-demo-slot="activity-error-handling" role="img" aria-label="Error handling — animation placeholder"><div class="placeholder"><span class="placeholder-mark" aria-hidden="true"></span><span>Animation placeholder</span></div></div><div class="example-copy"><h2>Error handling</h2><p>When something fails, show what stopped, explain what went wrong, and offer a way forward.</p></div></section><section class="fold example-fold" id="orienting" data-story-step="Orienting"><div class="animation-stage" data-demo-slot="activity-orienting" role="img" aria-label="Orienting — animation placeholder"><div class="placeholder"><span class="placeholder-mark" aria-hidden="true"></span><span>Animation placeholder</span></div></div><div class="example-copy"><h2>Orienting</h2><p>As the conversation develops, keep what is covered, where you are, and what comes next in view.</p></div></section><section class="fold example-fold" id="notes" data-story-step="Notes"><div class="animation-stage" data-demo-slot="activity-notes" role="img" aria-label="Notes — animation placeholder"><div class="placeholder"><span class="placeholder-mark" aria-hidden="true"></span><span>Animation placeholder</span></div></div><div class="example-copy"><h2>Notes</h2><p>Keep what has been learned in one place. Show what is still missing, and make room for unexpected details.</p></div></section><footer class="next-chapter"><div><p>Continue the story</p><a href="human-ai-access.html">What can it see? →</a></div><a class="research-link" href="human-ai-design-language-reference.html#activity">Design notes & references ↗</a></footer><footer class="site-footer"><p>Designed and built by Prerna Ramesh · A design language by Ozonetel</p><a href="https://github.com/prernaramesh-new/human-ai-design-language/discussions" target="_blank" rel="noopener noreferrer">Comment on GitHub ↗</a></footer></main><script>
+
+/* ============================================================================
+   The states, in bands.
+   ========================================================================== */
+
+const HALO_MARKUP = `<div class="hai-halo" role="img" aria-label="Writing a reply">
+  <span class="hai-halo__ring"></span>
+  <span class="hai-halo__ring"></span>
+  <span class="hai-halo__ring"></span>
+  <span class="hai-halo__dot"></span>
+</div>`;
+
+const HALO_CSS = `.hai-halo{position:relative;width:44px;height:44px;display:grid;place-items:center}
+.hai-halo__dot{width:12px;height:12px;border-radius:50%;background:var(--hai,#7dcfff);opacity:.82;
+  animation:hai-halo-breathe 3.9s cubic-bezier(.37,0,.63,1) infinite}
+.hai-halo__ring{position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--hai,#7dcfff);opacity:0;
+  animation:hai-halo-out 1.41s linear infinite}
+.hai-halo__ring:nth-child(2){animation-delay:-.47s}
+.hai-halo__ring:nth-child(3){animation-delay:-.94s}
+
+@keyframes hai-halo-breathe{
+  0%,100%{transform:scale(1);opacity:.74}
+  50%{transform:scale(1.27);opacity:.94}
+}
+@keyframes hai-halo-out{
+  0%{transform:scale(.32);opacity:.55}
+  100%{transform:scale(1);opacity:0}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .hai-halo__dot{animation:none;transform:scale(1.12);opacity:.88}
+  .hai-halo__ring{animation:none}
+  .hai-halo__ring:nth-child(1){transform:scale(.62);opacity:.26}
+  .hai-halo__ring:nth-child(2),.hai-halo__ring:nth-child(3){display:none}
+}`;
+
+const ORB_MARKUP = `<div class="hai-orb" role="img" aria-label="Processing"></div>`;
+
+const ORB_CSS = `.hai-orb{
+  width:30px;height:30px;background:var(--hai,#7dcfff);opacity:.6;
+  border-radius:54% 46% 41% 59% / 44% 53% 47% 56%;
+
+  /* Three loops on incommensurate durations, so the compound shape takes
+     about 23 hours to come back round rather than 7 seconds.
+     rotate and scale are set as their own properties rather than as
+     transform, so the loops compose instead of overriding one another. */
+  animation:hai-orb-morph  7.3s  cubic-bezier(.45,0,.55,1) infinite,
+            hai-orb-turn   19.7s linear infinite,
+            hai-orb-squash 5.9s  cubic-bezier(.45,0,.55,1) infinite;
+}
+
+/* the outline wandering */
+@keyframes hai-orb-morph{
+  0%,100%{border-radius:54% 46% 41% 59% / 44% 53% 47% 56%}
+  25%    {border-radius:38% 62% 63% 37% / 62% 39% 61% 38%}
+  50%    {border-radius:64% 36% 44% 56% / 36% 64% 36% 64%}
+  75%    {border-radius:43% 57% 58% 42% / 57% 43% 63% 37%}
+}
+
+/* carries the lumps around so they never sit in the same place */
+@keyframes hai-orb-turn{to{rotate:360deg}}
+
+/* non-uniform, so it flattens and stands up rather than just breathing */
+@keyframes hai-orb-squash{
+  0%,100%{scale:1 1}
+  25%    {scale:1.18 .86}
+  50%    {scale:.92 1.12}
+  75%    {scale:1.1 .93}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .hai-orb{animation:none;border-radius:54% 46% 41% 59% / 44% 53% 47% 56%}
+}`;
+
+const FETCH_MARKUP = `<div class="hai-fetch" role="img" aria-label="Retrieving">
+  <div class="hai-fetch__core"></div>
+  <i class="hai-fetch__bit"></i>
+  <i class="hai-fetch__bit"></i>
+  <i class="hai-fetch__bit"></i>
+  <i class="hai-fetch__bit"></i>
+  <i class="hai-fetch__bit"></i>
+</div>`;
+
+const FETCH_CSS = `/* Retrieving, as a badge. The work is happening somewhere else, so the mark does
+   not perform it -- the core is the thinking orb with its motion slowed almost to
+   rest, the same object attending rather than working, and small pieces of data
+   arrive into it from beyond the edge of the field.
+
+   Two things carry the meaning and must survive any edit:
+   the bits come from ONE side, because a source is a place -- arriving from all
+   around would read as gravity, not as a third party; and each bit runs on its own
+   duration, none of them commensurate, so arrivals never settle into a rhythm. A
+   metronome would imply progress, and how long another system takes is not ours to
+   imply. This is the only state whose duration belongs to someone else, so it has
+   to be able to hold indefinitely without ever suggesting how much is left. */
+.hai-fetch{position:relative;width:44px;height:44px;display:grid;place-items:center}
+
+.hai-fetch__core{
+  width:30px;height:30px;background:var(--hai,#7dcfff);opacity:.5;
+  border-radius:54% 46% 41% 59% / 44% 53% 47% 56%;
+  animation:hai-fetch-drift 17s cubic-bezier(.45,0,.55,1) infinite,
+            hai-fetch-turn  52s linear infinite;
+}
+@keyframes hai-fetch-drift{
+  0%,100%{border-radius:54% 46% 41% 59% / 44% 53% 47% 56%}
+  50%    {border-radius:47% 53% 52% 48% / 51% 47% 53% 49%}
+}
+@keyframes hai-fetch-turn{to{rotate:360deg}}
+
+/* the data. Starts outside the component's own box, which is the point. */
+.hai-fetch__bit{
+  position:absolute;left:50%;top:50%;width:4.5px;height:4.5px;margin:-2.25px 0 0 -2.25px;
+  border-radius:50%;background:var(--hai,#7dcfff);opacity:0;
+  animation:hai-fetch-bit 2.6s cubic-bezier(.32,0,.5,1) infinite;
+}
+.hai-fetch__bit:nth-of-type(1){--y:-7px}
+.hai-fetch__bit:nth-of-type(2){--y:3px; animation-delay:-.45s;  animation-duration:3.1s}
+.hai-fetch__bit:nth-of-type(3){--y:-2px;animation-delay:-1.35s; animation-duration:2.9s}
+.hai-fetch__bit:nth-of-type(4){--y:8px; animation-delay:-1.7s;  animation-duration:3.4s}
+.hai-fetch__bit:nth-of-type(5){--y:-9px;animation-delay:-2.3s;  animation-duration:2.7s}
+
+@keyframes hai-fetch-bit{
+  0%      {transform:translate(26px,var(--y,0px)) scale(.65);opacity:0}
+  14%     {opacity:.9}
+  60%     {transform:translate(0,0) scale(1);opacity:.9}
+  68%,100%{transform:translate(0,0) scale(.35);opacity:0}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .hai-fetch__core{animation:none;border-radius:54% 46% 41% 59% / 44% 53% 47% 56%}
+  /* No motion to say "coming in", so the bits rest partway along the path they
+     would have travelled -- present, and still clearly on one side. */
+  .hai-fetch__bit{animation:none;opacity:.7;transform:translate(15px,var(--y,0px))}
+}`;
+
+const SOLVE_MARKUP = `<div class="hai-solve" role="img" aria-label="Calculating">
+  <span class="hai-solve__disc"></span>
+  <svg class="hai-solve__rim" viewBox="0 0 44 44" aria-hidden="true">
+    <circle class="hai-solve__dots" cx="22" cy="22" r="18.5"></circle>
+    <circle class="hai-solve__arc"  cx="22" cy="22" r="18.5"></circle>
+  </svg>
+  <span class="hai-solve__win"><em>7<br>+<br>3<br>9<br>×<br>2<br>4<br>−<br>8<br>1<br>÷<br>6<br>5<br>2<br>+<br>0<br>3<br>×<br>7<br>9<br>−<br>4<br>÷<br>6<br>7</em></span>
+</div>`;
+
+const SOLVE_CSS = `/* Calculating, as a badge. Arithmetic, not judgement: unlike Processing, which is
+   open-ended, calculation follows a defined structure and produces a result you
+   could check. So the mark stops wandering and starts counting -- a digit lands,
+   holds, and is replaced by the next one.
+
+   Three things carry it and none are decoration.
+
+   The RIM IS ONE OBJECT. The arc is a third of the circumference and the rest of
+   it is dots of exactly the same weight on exactly the same radius, so what turns
+   is one rim that happens to be solid for a third of the way round. Make the dots
+   thinner and it becomes two rings, which reads as a target.
+
+   THE DOTS DIVIDE THE CIRCLE EXACTLY. r18.5 gives a circumference of 116.24, and
+   sixteen dots on a 7.265 period close the run with no seam. Change the radius
+   and this arithmetic has to be redone or a gap appears and travels.
+
+   THE DIGITS BEHAVE LIKE A COUNTER, not like a list sliding past. The window is
+   masked so a digit is always half in and half out at top and bottom, the strip
+   carries motion blur while it travels and none while it rests, the digits are
+   tabular so nothing shifts width, and each landing overshoots slightly rather
+   than stopping dead. Take any one of those away and it reads as scrolling text.
+
+   The digits are not a claim. They are what calculation looks like, not a value
+   the system is reporting -- which is why they never resolve to a total and the
+   rim never fills. */
+.hai-solve{position:relative;width:44px;height:44px;display:grid;place-items:center}
+
+/* the field. Low enough to sit under the digit, solid enough that the mark has a
+   body rather than being an outline. */
+.hai-solve__disc{position:absolute;inset:4px;border-radius:50%;
+  background:var(--hai,#7dcfff);opacity:.15}
+
+.hai-solve__rim{position:absolute;inset:0;width:44px;height:44px;display:block;overflow:visible}
+.hai-solve__rim circle{fill:none;stroke:var(--hai,#7dcfff);transform-origin:22px 22px}
+
+/* sixteen dots -- zero-length dashes drawn as dots by the round cap -- turning
+   slowly the other way. Ambient work, underneath the beat. */
+.hai-solve__dots{stroke-width:3.6;stroke-linecap:round;opacity:.5;
+  stroke-dasharray:0 7.265;animation:hai-solve-ccw 7.4s linear infinite}
+
+/* a third of the rim, turning smoothly. */
+.hai-solve__arc{stroke-width:3.6;stroke-linecap:round;opacity:.95;
+  stroke-dasharray:38.75 77.49;animation:hai-solve-cw 2.9s linear infinite}
+
+@keyframes hai-solve-cw{to{rotate:360deg}}
+@keyframes hai-solve-ccw{to{rotate:-360deg}}
+
+/* the counter. The mask is what makes it a wheel rather than a box of text. */
+.hai-solve__win{position:relative;width:16px;height:20px;overflow:hidden;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 28%,#000 72%,transparent 100%);
+          mask-image:linear-gradient(180deg,transparent 0,#000 28%,#000 72%,transparent 100%)}
+.hai-solve__win em{display:block;font-style:normal;text-align:center;
+  font:700 14px/20px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-variant-numeric:tabular-nums;color:var(--hai,#7dcfff);
+  animation:hai-solve-roll 17.4s infinite, hai-solve-blur .725s linear infinite}
+
+/* Twenty-four landings before it repeats, at the same pace as before -- one
+   every 0.725 seconds, four to each turn of the arc, so the rhythm is unchanged
+   and only the length of the sequence grows. Four glyphs was a loop you could
+   memorise in two turns; twenty-four takes seventeen seconds to come round, by
+   which point nobody is counting.
+
+   THE LAST ENTRY REPEATS THE FIRST, which is what makes the wrap invisible: the
+   strip ends on the glyph it began with, so snapping back to the top happens on
+   an identical frame. Change the sequence and that has to stay true or the wheel
+   visibly jumps once a cycle.
+
+   The sequence mixes digits with arithmetic operators on purpose. Digits alone
+   invite the reading that a value is being reported; an operator cannot be a
+   result, so seeing one confirms that what is passing is the WORK rather than the
+   answer. That is the same argument the whole mark rests on.
+
+   The overshoot is the difference between a wheel and a list. */
+@keyframes hai-solve-roll{
+   0.000%, 3.000% {translate:0 -0px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+   4.167%, 7.167% {translate:0 -20px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+   8.333%,11.333% {translate:0 -40px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  12.500%,15.500% {translate:0 -60px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  16.667%,19.667% {translate:0 -80px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  20.833%,23.833% {translate:0 -100px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  25.000%,28.000% {translate:0 -120px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  29.167%,32.167% {translate:0 -140px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  33.333%,36.333% {translate:0 -160px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  37.500%,40.500% {translate:0 -180px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  41.667%,44.667% {translate:0 -200px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  45.833%,48.833% {translate:0 -220px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  50.000%,53.000% {translate:0 -240px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  54.167%,57.167% {translate:0 -260px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  58.333%,61.333% {translate:0 -280px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  62.500%,65.500% {translate:0 -300px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  66.667%,69.667% {translate:0 -320px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  70.833%,73.833% {translate:0 -340px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  75.000%,78.000% {translate:0 -360px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  79.167%,82.167% {translate:0 -380px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  83.333%,86.333% {translate:0 -400px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  87.500%,90.500% {translate:0 -420px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  91.667%,94.667% {translate:0 -440px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  95.833%,98.833% {translate:0 -460px; animation-timing-function:cubic-bezier(.2,1.12,.3,1)}
+  100%     {translate:0 -480px}
+}
+
+/* The blur runs on its own 0.725s loop rather than being written into every one
+   of the twenty-four steps above. It stays in step because the roll is exactly
+   twenty-four of these -- change one duration and the other has to follow. */
+@keyframes hai-solve-blur{
+  0%,71%{filter:blur(0)} 86%{filter:blur(1.4px)} 100%{filter:blur(0)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  /* No motion to say "counting", so the rim rests with the arc plainly visible
+     and the counter rests ON a digit rather than between two. */
+  .hai-solve__dots,.hai-solve__arc{animation:none}
+  .hai-solve__win em{animation:none;translate:0 -40px;filter:none}
+}`;
+
+/* ---------- correcting itself — a transition, not a mode ----------
+   Like failure, what is handed out here is a wrapper rather than a shape: you put
+   it around whichever Working mark was already running and add the class at the
+   moment the system decides its last piece of work was wrong. It plays once and
+   hands back.
+
+   It is not in the mode bar on purpose. A mode says what kind of work is
+   happening; correcting says the work already done was wrong. That is a judgement
+   about earlier work, not a place where work happens, so it fails the test every
+   mode on this page has to pass -- and modelling it as a fourth mode would put a
+   verdict alongside three descriptions.
+
+   THE REVERSAL IS THE ARGUMENT. Turning one way and then back the other is the
+   only gesture here that means undoing; nothing else on the page runs backwards.
+   The collapse earns the rest of it -- the work goes to almost nothing before it
+   starts again, which is what redoing is. Speeding up the return, or letting it
+   come back by some other route, quietly turns it into a flourish.
+
+   TWO MARKS IT MUST NOT BE MISTAKEN FOR, both of them close.
+
+   (1) Calculating also rotates. The separator is that calculating turns in
+   discrete quarter steps with a hold and a flash at each landing, and never
+   changes size. This turns continuously, through a partial angle, and collapses.
+   If this is ever given holds for emphasis the two become the same mark at badge
+   size.
+
+   (2) Failure also begins by stopping. The separator is that failure holds still
+   and dims and stays that way, while this pauses only briefly and then moves and
+   never touches opacity. The opening hold is therefore deliberately short -- long
+   enough to read as catching itself, too short to read as stopped. Lengthening it
+   walks straight into the error signal.
+
+   The inner mark is paused for the duration rather than drawn stopped, the same
+   way failure freezes what was running -- so a correction mid-retrieval still
+   looks like a retrieval collapsing. */
+const CORRECT_MARKUP = `<div class="hai-correct" role="img" aria-label="Correcting itself">
+  <div class="hai-orb"></div>
+</div>`;
+
+const CORRECT_CSS = `/* Correcting. A wrapper around whichever Working mark was running, not a shape of
+   its own. The application adds .is-correcting when the system decides its last
+   piece of work was wrong; the animation plays once and the class comes off.
+
+   Rotate and scale live on this wrapper and never on the mark inside. Two
+   animations touching one property do not blend -- the later one wins and the
+   earlier silently stops -- and the marks inside already animate both. */
+.hai-correct{display:grid;place-items:center}
+.hai-correct.is-correcting{animation:hai-correct 5s both}
+
+/* The mark stops thinking while it is being taken back. Paused rather than
+   redrawn, so it resumes from where it actually was. */
+.hai-correct.is-correcting > *{animation-play-state:paused}
+
+/* Five seconds is the DEMONSTRATION, not the rule. In a live interface the hold
+   in the middle -- the beat at the collapsed point, 40% to 58% below -- is what
+   stretches, because nobody knows in advance how long redoing something takes.
+   Same rule retrieving already follows. A correction that finishes on a fixed
+   clock while the work is still being redone is a false claim, and this page
+   argues against those everywhere else. */
+@keyframes hai-correct{
+  /* catching itself -- short. Any longer and this is the error signal, which
+     holds still and dims and stays that way. */
+  0%,5%   {rotate:0deg;    scale:1;    animation-timing-function:cubic-bezier(.45,0,.55,1)}
+  /* going back over it. Four and a half turns, continuous, collapsing to a small
+     dot -- the work wound right back before it is done again.
+
+     Both numbers were set by eye against the running mark rather than derived,
+     and both have a floor and a ceiling worth knowing before anyone edits them.
+     The SCALE cannot go much below this: .16 of a 30px orb is about 4.9px, and
+     under roughly 4px the mark stops reading as a mark at all, which would break
+     the continuity this page argues for everywhere else -- something is always
+     there. The TURN cannot get much faster: this works out near 930 degrees a
+     second, already at the edge where a continuous turn starts to blur into a
+     spinner. Adding turns without adding length crosses that line. */
+  40%     {rotate:1620deg; scale:.16;  animation-timing-function:linear}
+  /* the hold. This is the beat that stretches in real use. */
+  58%     {rotate:1620deg; scale:.16;  animation-timing-function:cubic-bezier(.3,0,.3,1)}
+  /* and back out, retracing the same turns in the opposite direction. Returning
+     to zero is what makes it undoing rather than travel. */
+  95%     {rotate:0deg;   scale:1.05; animation-timing-function:ease-out}
+  100%    {rotate:0deg;   scale:1}
+}
+
+@media (prefers-reduced-motion:reduce){
+  /* A declared weakness: there is no good still picture of going back over
+     something. It rests part-collapsed and turned, which reads as work being
+     taken back rather than work being done, but it is the least certain still
+     frame on this page and wants testing before it is trusted. */
+  .hai-correct.is-correcting{animation:none;rotate:200deg;scale:.42}
+}`;
+
+const WAIT_MARKUP = `<svg class="hai-wait" viewBox="0 0 44 44" role="img" aria-label="Waiting for you">
+  <circle class="hai-wait__track" cx="22" cy="22" r="14"></circle>
+  <circle class="hai-wait__core"  cx="22" cy="22" r="3.6"></circle>
+</svg>`;
+
+const WAIT_CSS = `/* Waiting. The ring turns a step at a time -- move, then hold, then move -- and
+   the core inside it does not move at all.
+
+   THE HOLD IS THE STATE; THE STEP IS ONLY HOW THE MARK IS KEPT ALIVE. Eight steps
+   to a turn, one every 0.8 seconds, and the hold is roughly three times the
+   travel. Even the two out and the mark starts to read as work in progress, which
+   is the opposite of what it says: nothing is happening until you act.
+
+   AND THE CORE STAYS STILL. This is what separates it from listening, which is
+   the same ring with the core alive inside it. The pair differs in WHICH ELEMENT
+   MOVES, not in how fast -- two states cannot be told apart on tempo alone, which
+   is the fault this replaces.
+
+   The opening is 45 degrees and is where you come in. r14 gives a circumference of
+   87.96, so the gap is 11 of it, and half the gap as a negative offset centres the
+   opening on the right before the turning starts. */
+.hai-wait{display:block;width:44px;height:44px;overflow:visible}
+.hai-wait circle{fill:none;stroke:var(--hai,#7dcfff);transform-origin:22px 22px}
+
+.hai-wait__track{
+  stroke-width:3.2;stroke-linecap:round;opacity:.92;
+  stroke-dasharray:76.96 11;stroke-dashoffset:-5.5;
+  animation:hai-wait-step 36s infinite;
+}
+
+/* Still, and solid. The one element in the mark that does not move. */
+.hai-wait .hai-wait__core{fill:var(--hai,#7dcfff);stroke:none;opacity:.9}
+
+/* Timing functions live inside the keyframes so each step snaps and then sits;
+   the loop itself must stay unset or the holds drift.
+
+   One step is 4.5s of the 36s cycle: it sits for 3s, then takes 1.5s to turn the
+   next 45 degrees. As a share of the cycle that is a 8.333% hold followed by a
+   4.167% turn, which is where these numbers come from. Waiting is the slowest
+   thing on the page on purpose -- it is the state that says the work has stopped
+   and the turn is yours, so it must not look like work in progress. */
+@keyframes hai-wait-step{
+  0%,8.333%      {rotate:0deg;   animation-timing-function:cubic-bezier(.7,0,.2,1)}
+  12.5%,20.833%  {rotate:45deg;  animation-timing-function:cubic-bezier(.7,0,.2,1)}
+  25%,33.333%    {rotate:90deg;  animation-timing-function:cubic-bezier(.7,0,.2,1)}
+  37.5%,45.833%  {rotate:135deg; animation-timing-function:cubic-bezier(.7,0,.2,1)}
+  50%,58.333%    {rotate:180deg; animation-timing-function:cubic-bezier(.7,0,.2,1)}
+  62.5%,70.833%  {rotate:225deg; animation-timing-function:cubic-bezier(.7,0,.2,1)}
+  75%,83.333%    {rotate:270deg; animation-timing-function:cubic-bezier(.7,0,.2,1)}
+  87.5%,95.833%  {rotate:315deg; animation-timing-function:cubic-bezier(.7,0,.2,1)}
+  100%           {rotate:360deg}
+}
+
+@media (prefers-reduced-motion:reduce){
+  /* The opening rests on the right, where it starts. Nothing else changes: the
+     mark was already a solid ring around a still core. */
+  .hai-wait__track{animation:none}
+}`;
+
+const LISTEN_MARKUP = `<svg class="hai-listen" viewBox="0 0 44 44" role="img" aria-label="Listening to you">
+  <circle class="hai-listen__track" cx="22" cy="22" r="13"></circle>
+  <circle class="hai-listen__core"  cx="22" cy="22" r="4.4"></circle>
+</svg>`;
+
+const LISTEN_CSS = `/* The pair with waiting, and the inversion is the whole design:
+
+     waiting    the ring turns, the core is still
+     listening  the ring is still, the core is alive
+
+   The ring stays open in both -- the opening is where you come in, so closing it
+   while receiving would be backwards -- and it does not turn here, because
+   something IS happening and it is happening in the middle, not at the edge.
+
+   The opening is 60 degrees, wider than waiting's, so it reads at a glance. r13
+   gives a circumference of 81.68, the gap is 13.61 of it, and half the gap as a
+   negative offset centres the opening on the right.
+
+   Nothing is drawn inside the ring beyond the core. This family is a dot inside a
+   circle, so anything added in there becomes another concentric ring, and
+   concentric rings read as a target. */
+
+.hai-listen{display:block;width:44px;height:44px;overflow:visible}
+.hai-listen circle{fill:none;stroke:var(--hai,#7dcfff);transform-origin:22px 22px}
+
+.hai-listen__track{
+  stroke-width:4.6;stroke-linecap:round;opacity:.95;
+  stroke-dasharray:68.07 13.61;stroke-dashoffset:-6.805;
+}
+
+/* Two loops on deliberately mismatched durations -- 0.9s and 1.27s -- so size
+   and brightness drift out of step and the rhythm never settles into a
+   metronome. A person talking is not periodic, and a core pulsing on one clean
+   beat would read as a heartbeat or a countdown. */
+.hai-listen .hai-listen__core{
+  fill:var(--hai,#7dcfff);stroke:none;
+  animation:hai-listen-size .9s  cubic-bezier(.35,0,.5,1)  infinite,
+            hai-listen-lift 1.27s cubic-bezier(.45,0,.55,1) infinite;
+}
+
+@keyframes hai-listen-size{0%,100%{scale:1}   45%{scale:1.5}}
+@keyframes hai-listen-lift{0%,100%{opacity:.62}50%{opacity:1}}
+
+@media (prefers-reduced-motion:reduce){
+  /* No motion to carry "alive", so the core rests bright and enlarged. Waiting's
+     rests still and smaller, so the pair is still legible as a pair. */
+  .hai-listen .hai-listen__core{animation:none;scale:1.25;opacity:1}
+}`;
+
+const STAGE_MARKUP = `<div class="hai-stage" role="img" aria-label="Introduction and needs done, now discussing pricing, meeting booking expected next">
+  <svg class="hai-stage__ring" viewBox="0 0 56 56">
+    <circle class="hai-stage__seg is-settled"  cx="28" cy="28" r="17"></circle>
+    <circle class="hai-stage__seg is-settled"  cx="28" cy="28" r="17"></circle>
+    <circle class="hai-stage__seg is-settled"  cx="28" cy="28" r="17"></circle>
+    <circle class="hai-stage__seg is-intended" cx="28" cy="28" r="17"></circle>
+    <circle class="hai-stage__seg"             cx="28" cy="28" r="17"></circle>
+  </svg>
+  <div class="hai-stage__labels">
+    <span class="hai-stage__label"><svg class="hai-stage__tick" viewBox="0 0 12 12" aria-hidden="true"><path d="M1.8 6.4 4.5 9.1 10.2 3"/></svg>Introduction</span>
+    <span class="hai-stage__label"><svg class="hai-stage__tick" viewBox="0 0 12 12" aria-hidden="true"><path d="M1.8 6.4 4.5 9.1 10.2 3"/></svg>Needs</span>
+    <span class="hai-stage__label"><em>Now:</em>Pricing</span>
+    <span class="hai-stage__label is-intended"><em>Next:</em><span class="hai-stage__guess"><span class="g1">Meeting booking</span><span class="g2">Customisation</span></span></span>
+  </div>
+</div>`;
+
+const STAGE_CSS = `/* Five buckets, not five turns — a longer conversation is re-grouped into the
+   same five, so the ring never changes shape.
+
+   Three kinds of segment:
+     .is-settled   happened, and it is named       opacity .9
+     .is-intended  what the AI plans next          opacity .38
+     (neither)     nothing known yet, bare track   opacity .10
+
+   Fill says what happened; the marker says what is being pointed at. Keeping
+   those on separate channels is the whole component — the marker can rest on a
+   segment that has not happened without appearing to complete it.
+
+   Ticks go on the two that are finished. The third is filled but still open,
+   so it gets "Now:" rather than a tick. */
+
+.hai-stage{display:flex;align-items:center;gap:16px}
+.hai-stage__ring{display:block;width:56px;height:56px;flex:none}
+
+/* Circumference 106.81 over five is 21.36 a segment; 1.19 of padding at each
+   end leaves an 18.98 arc. Butt caps, so thickening never changes arc length. */
+.hai-stage__seg{
+  fill:none;stroke:var(--hai,#7dcfff);stroke-width:4;
+  transform:rotate(-90deg);transform-origin:28px 28px;
+  stroke-dasharray:18.98 87.83;
+  opacity:.10;
+}
+.hai-stage__seg:nth-child(1){stroke-dashoffset:-1.19}
+.hai-stage__seg:nth-child(2){stroke-dashoffset:-22.553}
+.hai-stage__seg:nth-child(3){stroke-dashoffset:-43.916}
+.hai-stage__seg:nth-child(4){stroke-dashoffset:-65.278}
+.hai-stage__seg:nth-child(5){stroke-dashoffset:-86.641}
+
+.hai-stage__seg.is-settled{opacity:.9}
+.hai-stage__seg.is-intended{opacity:.38}
+
+/* 8s cycle: four stops of 1.3s, then 2.8s at rest. The marker does not vanish
+   during the rest — it returns to the current stage, because that is the only
+   thing that is true when nothing is being explained. So the third segment runs
+   its own keyframes with two lit windows: its stop, and home. */
+.hai-stage__seg:nth-child(1),
+.hai-stage__seg:nth-child(2),
+.hai-stage__seg:nth-child(4){animation:hai-stage-mark 8s linear infinite}
+.hai-stage__seg:nth-child(2){animation-delay:1.3s}
+.hai-stage__seg:nth-child(4){animation-delay:3.9s}
+.hai-stage__seg:nth-child(3){animation:hai-stage-mark-now 8s linear infinite}
+
+@keyframes hai-stage-mark{
+  0%       {stroke-width:4;   animation-timing-function:cubic-bezier(.2,.9,.35,1)}
+  2%       {stroke-width:6.5}
+  14.25%   {stroke-width:6.5; animation-timing-function:cubic-bezier(.4,0,.7,1)}
+  16.9%,100%{stroke-width:4}
+}
+
+/* Starts and ends lit, so the loop joins seamlessly at the rest state. */
+@keyframes hai-stage-mark-now{
+  0%          {stroke-width:6.5; animation-timing-function:cubic-bezier(.4,0,.7,1)}
+  2.6%,32.5%  {stroke-width:4;   animation-timing-function:cubic-bezier(.2,.9,.35,1)}
+  34.5%,46.75%{stroke-width:6.5; animation-timing-function:cubic-bezier(.4,0,.7,1)}
+  49.4%,65.5% {stroke-width:4;   animation-timing-function:cubic-bezier(.2,.9,.35,1)}
+  68%,100%    {stroke-width:6.5}
+}
+
+/* Labels are stacked in one slot so the ring never shifts as the text changes,
+   and they travel rather than blink: each one rises in as the last rises out,
+   with the windows overlapping so there is never a gap showing nothing. */
+.hai-stage__guess{position:relative;display:inline-block;white-space:nowrap}
+.hai-stage__guess span{display:inline-block}
+.hai-stage__guess .g2{position:absolute;left:0;top:0}
+.hai-stage__guess .g1{animation:hai-stage-guess-out 24s linear infinite}
+.hai-stage__guess .g2{animation:hai-stage-guess-in 24s linear infinite}
+@keyframes hai-stage-guess-out{
+  0%,84%{opacity:1;translate:0 0;animation-timing-function:cubic-bezier(.4,0,.7,1)}
+  86.5%,100%{opacity:0;translate:0 -6px}
+}
+@keyframes hai-stage-guess-in{
+  0%,84%{opacity:0;translate:0 6px;animation-timing-function:cubic-bezier(.25,.9,.35,1)}
+  86.5%,100%{opacity:1;translate:0 0}
+}
+.hai-stage__labels{position:relative;min-width:186px;min-height:22px}
+
+.hai-stage__label{
+  position:absolute;left:0;top:50%;margin-top:-11px;height:22px;
+  display:flex;align-items:center;gap:6px;white-space:nowrap;
+  --o:1;opacity:0;font-size:13.5px;
+  animation:hai-stage-say 8s linear infinite;
+}
+.hai-stage__label:nth-child(2){animation-delay:1.3s}
+.hai-stage__label:nth-child(4){animation-delay:3.9s}
+.hai-stage__label:nth-child(3){animation:hai-stage-say-now 8s linear infinite}
+
+/* A faint label for a faint claim — it carries the same uncertainty as its
+   segment, so the component says how sure it is, not only what it thinks. */
+.hai-stage__label.is-intended{--o:.55}
+
+/* The forecast being revised. This runs on 24s against the ring's 8s, so the
+   guess holds for two laps and is corrected on the third — a forecast that
+   changed every time would read as a tic rather than as a correction.
+   The swap is timed to land while the label is on screen, at 84-86.5% of the
+   long cycle, so the change is watched rather than merely discovered; the
+   reset back happens at the loop boundary, when the label is hidden. */
+.hai-stage__guess{position:relative;display:inline-block;white-space:nowrap}
+.hai-stage__guess span{display:inline-block}
+.hai-stage__guess .g2{position:absolute;left:0;top:0}
+.hai-stage__guess .g1{animation:hai-stage-guess-out 24s linear infinite}
+.hai-stage__guess .g2{animation:hai-stage-guess-in  24s linear infinite}
+
+@keyframes hai-stage-guess-out{
+  0%,84%    {opacity:1;translate:0 0;    animation-timing-function:cubic-bezier(.4,0,.7,1)}
+  86.5%,100%{opacity:0;translate:0 -6px}
+}
+@keyframes hai-stage-guess-in{
+  0%,84%    {opacity:0;translate:0 6px;  animation-timing-function:cubic-bezier(.25,.9,.35,1)}
+  86.5%,100%{opacity:1;translate:0 0}
+}
+
+.hai-stage__label em{font-style:normal;font-size:12.5px;opacity:.62}
+
+.hai-stage__tick{
+  width:11px;height:11px;flex:none;
+  fill:none;stroke:var(--hai,#7dcfff);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;
+}
+
+@keyframes hai-stage-say{
+  0%        {opacity:0;         translate:0 7px;  animation-timing-function:cubic-bezier(.2,.9,.35,1)}
+  2.4%      {opacity:var(--o);  translate:0 0}
+  14.25%    {opacity:var(--o);  translate:0 0;    animation-timing-function:cubic-bezier(.4,0,.7,1)}
+  17.6%,100%{opacity:0;         translate:0 -7px}
+}
+
+@keyframes hai-stage-say-now{
+  0%          {opacity:var(--o); translate:0 0;    animation-timing-function:cubic-bezier(.4,0,.7,1)}
+  2.6%        {opacity:0;        translate:0 -7px}
+  32.5%       {opacity:0;        translate:0 7px;  animation-timing-function:cubic-bezier(.2,.9,.35,1)}
+  34.9%,46.75%{opacity:var(--o); translate:0 0;    animation-timing-function:cubic-bezier(.4,0,.7,1)}
+  50.1%       {opacity:0;        translate:0 -7px}
+  65.8%       {opacity:0;        translate:0 7px;  animation-timing-function:cubic-bezier(.2,.9,.35,1)}
+  68.4%,100%  {opacity:var(--o); translate:0 0}
+}
+
+/* At rest the only true frame is "now", so that is the one it holds. */
+@media (prefers-reduced-motion:reduce){
+  .hai-stage__seg,.hai-stage__label,.hai-stage__guess span{animation:none}
+  .hai-stage__seg:nth-child(3){stroke-width:6.5}
+  .hai-stage__label{opacity:0}
+  .hai-stage__label:nth-child(3){opacity:1}
+  .hai-stage__guess .g2{display:none}
+}`;
+
+const YIELD_MARKUP = `<div class="hai-yields">
+  <div class="hai-yield" data-from="typing">
+    <span class="hai-yield__bar" aria-hidden="true"></span>
+    <div class="hai-yield__stage">
+      ${HALO_MARKUP}
+      ${LISTEN_MARKUP}
+    </div>
+    <span class="hai-yield__from">Generation</span>
+    <span class="hai-yield__arrow">&rarr;</span>
+    <span class="hai-yield__to">Listening</span>
+  </div>
+  <div class="hai-yield" data-from="thinking">
+    <span class="hai-yield__bar" aria-hidden="true"></span>
+    <div class="hai-yield__stage">
+      ${ORB_MARKUP}
+      ${LISTEN_MARKUP}
+    </div>
+    <span class="hai-yield__from">Working</span>
+    <span class="hai-yield__arrow">&rarr;</span>
+    <span class="hai-yield__to">Listening</span>
+  </div>
+  <div class="hai-yield" data-from="waiting">
+    <span class="hai-yield__bar" aria-hidden="true"></span>
+    <div class="hai-yield__stage">
+      ${WAIT_MARKUP}
+      ${LISTEN_MARKUP}
+    </div>
+    <span class="hai-yield__from">Waiting</span>
+    <span class="hai-yield__arrow">&rarr;</span>
+    <span class="hai-yield__to">Listening</span>
+  </div>
+</div>
+<div class="hai-probe">
+  <!-- Short on purpose: this box is ~220px, and anything longer is cut off mid-word.
+       What the wording drops -- that all three yield at once -- the three rows beside
+       it already say. -->
+  <input id="yprobe" placeholder="Type a message, then Enter" autocomplete="off">
+  <span>you taking the turn</span>
+</div>`;
+
+const YIELD_CSS_TEXT = `/* Three joins, and not one new animation among them. Each stage holds the
+   component that is running and the listening component, both already built;
+   the join is a class and a transition. That is what a join is — a state
+   change, not a loop — and it means an application only has to add the class.
+
+   Exits run at .34s and entrances at .44s, so leaving is quicker than
+   arriving. A yield should feel like giving way, not like being cut off. */
+
+.hai-yields{display:flex;flex-direction:column;gap:4px;width:100%;max-width:430px}
+.hai-yield{position:relative;display:flex;align-items:center;gap:16px;padding:9px 2px}
+
+/* ---- the underline, which is the part you actually read ----
+   The marks say what is happening; the words say which state it is; and this is
+   the only thing that says WHICH WORD IS TRUE RIGHT NOW. Two marks exchanging in
+   one spot is a lot to read in a second and a bit -- an underline sliding from
+   one word to the other is not, and it makes the join legible even to someone
+   who missed the mark entirely.
+
+   It is one bar that travels, never two bars fading. A bar that faded out under
+   the first word and in under the second would be two events; sliding is one, and
+   one event is what a hand-off is.
+
+   Its position is measured rather than written down, because the words differ in
+   length from row to row and the label column is wider than the word inside it.
+   The row's script writes the four numbers per end; everything here just moves
+   between them. */
+.hai-yield__bar{position:absolute;left:0;top:0;height:2px;border-radius:2px;
+  background:var(--hai,#7dcfff);pointer-events:none;
+  width:var(--fw,0px);translate:var(--fx,0px) var(--fy,0px);
+  transition:translate 1.5s cubic-bezier(.25,.9,.35,1),
+             width 1.5s cubic-bezier(.25,.9,.35,1)}
+.hai-yield.is-yielded .hai-yield__bar{width:var(--tw,0px);translate:var(--tx,0px) var(--ty,0px)}
+
+/* Both components stack in one place, and the join is written so that ONE THING
+   HAPPENS rather than two marks trading places.
+
+   The old version cross-faded: the outgoing mark fell to 60% while the incoming
+   one grew from 82%, both changing opacity across the same 340ms. For a third of
+   a second there were two half-visible marks in the same spot, which is what made
+   it read as a swap rather than a hand-off.
+
+   Now the outgoing mark COLLAPSES TO A POINT at the centre, accelerating as it
+   goes, and the listening core GROWS OUT OF THAT SAME POINT a beat later -- so
+   the eye follows one object down and back up. The ring forms around it last,
+   once the core is already there.
+
+   THE WHOLE JOIN RUNS 2.6 SECONDS, which is very slow for an interface and
+   deliberate here: this is the one moment the system gives the turn back, and a
+   quick hand-off does not read as giving way, it reads as being cut off. On the
+   page it then HOLDS FOR FOUR SECONDS at each end, so a reader sees both settled
+   states as well as the move between them -- the earlier version spent half its
+   time in motion, which is what made a slow join feel rushed.
+   Leaving still finishes before arriving does -- 1.2s out against 1.44s in -- so
+   the order of the gesture survives the length. The ring is last at 2.6s.
+
+   Waiting is the exception and gets its own join below. */
+.hai-yield__stage{position:relative;width:68px;height:46px;flex:none;display:grid;place-items:center}
+.hai-yield__stage>*{position:absolute}
+
+/* leaving: accelerating into the point, so the last of the movement is the
+   fastest -- that is what makes it read as being drawn in rather than shrinking */
+.hai-yield .hai-halo,
+.hai-yield .hai-orb,
+.hai-yield .hai-wait{
+  transition:opacity 1.04s cubic-bezier(.5,0,.85,.4), scale 1.20s cubic-bezier(.5,0,.85,.4)}
+.hai-yield.is-yielded .hai-halo,
+.hai-yield.is-yielded .hai-orb,
+.hai-yield.is-yielded .hai-wait{opacity:0;scale:.14}
+
+/* arriving: the whole mark comes up out of the point. The fade sits on the
+   CONTAINER and not on the core, so the core's own two loops keep running
+   underneath the join -- put it on the core and the mark arrives dead, then
+   starts breathing a moment later, which is worse than either. */
+.hai-yield .hai-listen{opacity:0;scale:.45;
+  transition:opacity .92s linear .80s, scale 1.44s cubic-bezier(.22,.92,.3,1) .80s}
+.hai-yield.is-yielded .hai-listen{opacity:1;scale:1}
+
+/* the ring forms last, around a core that is already there */
+.hai-yield .hai-listen__track{opacity:0;transition:opacity 1.16s cubic-bezier(.25,.9,.35,1) 1.44s}
+.hai-yield.is-yielded .hai-listen__track{opacity:.95}
+
+/* ---- waiting, which keeps its ring ----
+   The truest join in the family, and it survives the pair no longer being
+   identical. Nothing crosses over: the ring that is already on screen STOPS
+   TURNING and OPENS WIDER, growing heavier as it does, while the core inside it
+   is exchanged. The reading is exact -- the ring stops working and opens to let
+   you in -- and it is the only join where the mark never leaves.
+
+   The radius is deliberately NOT animated. Listening's ring is a radius tighter,
+   but the radius is a CSS property only in some browsers, and if it silently fails to
+   apply while the dash pattern beneath it does, the gap doubles and a second
+   opening appears. So the ring keeps its radius and the opening is recomputed for
+   it: 60 degrees of this circumference is 14.66 rather than 13.61. */
+.hai-yield[data-from="waiting"] .hai-wait{opacity:1!important;scale:1!important}
+.hai-yield[data-from="waiting"] .hai-wait__track{
+  transition:stroke-width 1.9s cubic-bezier(.25,.9,.35,1),
+             stroke-dasharray 1.9s cubic-bezier(.25,.9,.35,1),
+             stroke-dashoffset 1.9s cubic-bezier(.25,.9,.35,1),
+             rotate 1.9s cubic-bezier(.25,.9,.35,1),
+             opacity 1.9s linear}
+.hai-yield[data-from="waiting"].is-yielded .hai-wait__track{
+  stroke-width:4.6;stroke-dasharray:73.30 14.66;stroke-dashoffset:-7.33;opacity:.95}
+
+/* THE OPENING COMES BACK TO THE RIGHT, always, because that is where the input
+   box is: listening's opening faces the thing you are about to type into, and a
+   mark that says "come in here" while pointing at nothing says the opposite.
+   Waiting's opening travels, so at the moment of the join it can be anywhere.
+   The stepping cannot simply be paused -- that leaves the opening wherever it
+   stopped -- and it cannot simply be removed either, because the angle would snap
+   back to zero. So the row's script freezes the current angle onto the element,
+   drops the animation, and lets the transition above carry it round to the
+   nearest whole turn. That is the one place in this family where a join needs
+   more than a class. */
+.hai-yield[data-from="waiting"] .hai-wait__track.is-settling{animation:none}
+
+/* the two cores exchange in place, and nothing else moves */
+.hai-yield[data-from="waiting"] .hai-wait__core{transition:opacity .7s linear}
+.hai-yield[data-from="waiting"].is-yielded .hai-wait__core{opacity:0}
+.hai-yield[data-from="waiting"] .hai-listen{scale:1!important;
+  transition:opacity .9s linear .7s}
+.hai-yield[data-from="waiting"] .hai-listen__track{opacity:0!important}
+
+@media (prefers-reduced-motion:reduce){
+  /* No join to play, so each row rests at the end of it: the outgoing mark gone,
+     listening present and whole. */
+  .hai-yield .hai-listen,.hai-yield .hai-listen__track{opacity:1;scale:1}
+  .hai-yield .hai-halo,.hai-yield .hai-orb,.hai-yield .hai-wait{opacity:0}
+  .hai-yield[data-from="waiting"] .hai-listen__track{opacity:1!important}
+  /* the underline is placed rather than travelled, under the word that is true */
+  .hai-yield__bar,.hai-yield__from,.hai-yield__to{transition:none}
+}`;
+
+/* ---------- handover ----------
+   The pass. The AI does not turn into the person and it does not simply fade —
+   it is displaced. The person comes forward from behind and to the right while
+   the thinking mark is pushed back and out to the left, the two overlapping for
+   a beat. That overlap is the whole idea: for a moment both are present, which
+   is what a hand-over actually looks like and what a crossfade cannot say.
+
+   Replaces the 3½-turn coin (26 Aug). The turn kept the mark's slot and changed
+   the identity inside it, which read as transformation — the AI *becoming* the
+   person. It is not; a second party arrives and the first leaves.
+
+   Two deliberate calls, both worth knowing:
+   · The person is the SAME COLOUR as the AI. Colour does no work here. The
+     difference is solidity and stillness — the AI translucent and endlessly
+     re-forming, the person opaque, a true circle, and completely still.
+   · The person is a HEAD-AND-SHOULDERS GLYPH, not initials and not a name.
+     Initials are the avatar convention, not the human one, and named AI personas
+     are now common enough that a name proves nothing — "Dana" beside a mark
+     reads as what the assistant is called. The glyph carries the claim alone,
+     which is thin; that thinness is a known gap, not an oversight. */
+const HANDOVER_MARKUP = `<div class="hai-hand" role="img" aria-label="The conversation is passed from the AI to a person">
+  <div class="hai-hand__ai"><div class="hai-orb"></div></div>
+  <div class="hai-hand__human">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="8.4" r="3.9"></circle>
+      <path d="M4.5 20.2a7.5 7.5 0 0 1 15 0z"></path>
+    </svg>
+  </div>
+</div>`;
+
+const HANDOVER_CSS = `/* Handover — the pass. A fixed stage so neither mark reflows the other as they
+   cross; both are absolutely placed and only translate, scale and opacity move. */
+.hai-hand{position:relative;width:124px;height:44px;display:grid;place-items:center}
+.hai-hand__ai,.hai-hand__human{position:absolute;display:grid;place-items:center}
+.hai-hand__ai .hai-orb{width:30px;height:30px}
+
+/* the person: opaque, a true circle, still — every axis the opposite of the orb,
+   and the same colour, so none of the difference is carried by hue. */
+.hai-hand__human{width:44px;height:44px;border-radius:50%;background:var(--hai,#7dcfff)}
+.hai-hand__human svg{width:21px;height:21px;display:block;fill:var(--bg,#0a0c0f)}
+
+/* 9s loop: ~2.5s of the AI thinking · the pass, the two overlapping through the
+   middle of it · ~3.4s on the person · then back, so the loop can run again. */
+.hai-hand__ai{animation:hai-hand-out 9s linear infinite}
+@keyframes hai-hand-out{
+  0%,28%  {translate:0 0;   scale:1;  opacity:1;animation-timing-function:cubic-bezier(.5,0,.75,1)}
+  40%     {translate:-26px 0;scale:.8; opacity:.7}
+  54%,100%{translate:-50px 0;scale:.5; opacity:0}
+}
+.hai-hand__human{opacity:0;animation:hai-hand-in 9s linear infinite}
+@keyframes hai-hand-in{
+  0%,30%  {translate:36px 0;scale:.55;opacity:0;animation-timing-function:cubic-bezier(.22,.85,.3,1)}
+  52%,88% {translate:0 0;   scale:1;  opacity:1}
+  96%,100%{translate:36px 0;scale:.55;opacity:0}
+}
+
+/* Reduced motion: no travel and no crossing. The two identities swap on opacity
+   alone, which still shows that the responder changed. */
+@media (prefers-reduced-motion:reduce){
+  .hai-hand__ai,.hai-hand__human{animation:none;translate:0 0;scale:1}
+  .hai-hand__ai{animation:hai-hand-rm-ai 9s ease-in-out infinite}
+  .hai-hand__human{animation:hai-hand-rm 9s ease-in-out infinite}
+}
+@keyframes hai-hand-rm{0%,38%{opacity:0}52%,90%{opacity:1}100%{opacity:0}}
+@keyframes hai-hand-rm-ai{0%,38%{opacity:1}52%,90%{opacity:0}100%{opacity:1}}`;
+
+/* ---------- notes (Part 08, provisional name) ----------
+   ONE list that opens as a plan and becomes a record.
+
+   Two kinds of row. A row that was ASKED FOR starts as a label with a hollow mark
+   and no value; when the talk surfaces it, the mark fills and the row grows its
+   value. A row nobody asked for arrives with its value already there and carries
+   NO MARK AT ALL -- an empty box beside a fact would read as "still missing", which
+   is the opposite of true, so the mark column is absent rather than empty. The
+   count in the header governs only the four that were asked for; the list itself
+   is longer than the count, which is the honest shape: you can know how much of
+   your own plan is done, and you can never know what you have not been told.
+
+   Fields fill out of order and the list rests incomplete -- not-yet-gathered is
+   neutral, not an error. Driven by driveNotes() below (a timer, not a keyframe)
+   so the count can be read off the filled rows -- the same pattern as yielding's
+   driver. Two family bodies share one shell; the line family swaps the box for a
+   node on a vertical spine, and the spine spans only the asked-for rows. */
+/* One row builder for both families. `tick` is the only difference: the badge
+   family's mark is a box that gets a check, the line family's is a node on a
+   spine, so only the badge needs the glyph inside it. */
+const nRow = (k,v,tick) =>
+  `<div class="hai-notes__row nrow"><span class="hai-notes__mk">${tick?'<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.3 5 9.2 10 3"/></svg>':''}</span>`+
+  `<span class="hai-notes__tx"><span class="hai-notes__k">${k}</span><span class="hai-notes__v"><span>${v}</span></span></span></div>`;
+
+const nBody = tick => `<div class="hai-notes__rows">
+    <span class="hai-notes__spine"></span>
+    ${nRow('Company','Trellis Retail',tick)}
+    ${nRow('Team size','40 agents',tick)}
+    ${nRow('Need','Handle time',tick)}
+    ${nRow('Budget','',tick)}
+  </div>
+  <div class="hai-notes__extra">
+    <div class="hai-notes__row nextra"><span class="hai-notes__tx"><span class="hai-notes__k">Tier</span><span class="hai-notes__v"><span>Growth · per seat</span></span></span></div>
+  </div>`;
+
+const NOTES_LABEL = 'Qualifying — Company and Need gathered, Team size and Budget still to gather, and Tier noted although it was never asked for';
+
+const NOTES_MARKUP = `<div class="hai-notes" role="img" aria-label="${NOTES_LABEL}">
+  <div class="hai-notes__hd">Qualifying<span class="hai-notes__n ncount">0 / 4</span></div>
+  ${nBody(true)}
+</div>`;
+
+const LINE_NOTES_MARKUP = `<div class="hai-notes hai-notes--line" role="img" aria-label="${NOTES_LABEL}">
+  <div class="hai-notes__hd">Qualifying<span class="hai-notes__n ncount">0 / 4</span></div>
+  ${nBody(false)}
+</div>`;
+
+const NOTES_CSS = `.hai-notes{width:236px;max-width:100%;text-align:left;font-size:13.5px}
+.hai-notes__hd{display:flex;align-items:center;justify-content:space-between;
+  font:600 9.5px/1 var(--f);letter-spacing:.13em;text-transform:uppercase;color:var(--dim);
+  margin-bottom:11px;padding-bottom:10px;border-bottom:1px solid var(--ln)}
+.hai-notes__n{font:600 10px/1 var(--m);color:var(--hai);letter-spacing:0}
+.hai-notes__rows{position:relative}
+.hai-notes__row{display:flex;align-items:flex-start;gap:11px;color:var(--dim);
+  padding:4px 0;transition:color .35s var(--in)}
+.hai-notes__row.on{color:var(--txt)}
+.hai-notes__tx{display:flex;flex-direction:column;gap:1px;min-width:0}
+.hai-notes__k{line-height:1.35;transition:font-size .3s var(--in),color .3s var(--in)}
+/* The value a row grows once it has been gathered. It is a 0fr grid track until
+   then -- so the row is genuinely one line tall and genuinely grows, and the value
+   can be any length without a hard-coded height to keep in step with it. */
+.hai-notes__v{display:grid;grid-template-rows:0fr;opacity:0;
+  transition:grid-template-rows .34s var(--in),opacity .38s var(--in)}
+.hai-notes__v>span{overflow:hidden;font-size:13px;color:var(--txt);line-height:1.4}
+.hai-notes__row.on .hai-notes__k{font-size:11px;color:var(--dim);letter-spacing:.01em}
+.hai-notes__row.on .hai-notes__v{grid-template-rows:1fr;opacity:1}
+.hai-notes__mk{width:15px;height:15px;border-radius:4px;flex:none;margin-top:2px;color:var(--bg);
+  border:1.5px solid var(--faint);display:grid;place-items:center;
+  transition:background .35s var(--in),border-color .35s var(--in)}
+.hai-notes__mk svg{width:9px;height:9px;opacity:0;fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;transition:opacity .3s}
+.hai-notes__row.on .hai-notes__mk{background:var(--hai);border-color:var(--hai)}
+.hai-notes__row.on .hai-notes__mk svg{opacity:1}
+/* The volunteered half: no mark at all, indented to the same label column (mark
+   15px + gap 11px) so the two kinds of row read as one list, and set below a seam
+   because the count above speaks only for the four that were asked for. */
+.hai-notes__extra{margin-top:7px;padding-top:8px;border-top:1px solid var(--ln)}
+.hai-notes__row.nextra{padding-left:26px;color:var(--txt);
+  opacity:0;translate:0 6px;transition:opacity .44s var(--in),translate .44s var(--in)}
+.hai-notes__row.nextra .hai-notes__k{font-size:11px;color:var(--dim);letter-spacing:.01em}
+.hai-notes__row.nextra .hai-notes__v{grid-template-rows:1fr;opacity:1}
+.hai-notes__row.nextra.on{opacity:1;translate:0 0}
+.hai-notes .hai-notes__spine{display:none}
+@media (prefers-reduced-motion:reduce){
+  .hai-notes__row,.hai-notes__k,.hai-notes__v,.hai-notes__mk,.hai-notes__mk svg{transition:none}
+}`;
+
+const LINE_NOTES_CSS = `/* The line family's notes: a vertical spine, a node per asked-for field. Shares
+   the shell in NOTES_CSS; only the mark differs -- and the spine stops at the last
+   asked-for row, because the facts below it were never on the line. */
+.hai-notes--line .hai-notes__spine{display:block;position:absolute;left:7px;top:14px;bottom:14px;
+  width:1.5px;background:var(--ln2)}
+.hai-notes--line .hai-notes__mk{border-radius:50%;position:relative;z-index:1;
+  border:1.5px solid var(--faint);background:var(--bg);
+  transition:background .35s var(--in),border-color .35s var(--in),box-shadow .35s var(--in)}
+.hai-notes--line .hai-notes__row.on .hai-notes__mk{background:var(--hai);border-color:var(--hai);
+  box-shadow:0 0 0 3px rgba(125,207,255,.14)}`;
+
+/* ---- the line family ----
+   Three of these — thinking, listening, yielding — are one wavy line with
+   different amplitude and regularity, so they share one path animator (in the
+   script below) rather than one keyframe each. Waiting (Passive) is the near-flat
+   member and is pure CSS. Every part draws from the same --hai as the badge, so
+   the picker recolours the whole set in one assignment. */
+
+const LINE_DRIFT_MARKUP = `<svg class="hai-line" data-wave="drift" viewBox="0 0 320 80" role="img" aria-label="Waiting for you">
+  <path class="hai-line__path"></path>
+</svg>`;
+const LINE_DRIFT_CSS = `/* Waiting, as a line. A low, slow, wandering wave — the ball is with you, and the
+   line stays quietly alive rather than going flat, so it is never mistakable for
+   stuck. Low amplitude and slow drift are the state. The path is redrawn each frame
+   by the shared line animator; data-wave="drift" selects its amplitude and speed. */
+.hai-line{display:block;width:min(340px,88%);height:auto;overflow:visible}
+.hai-line__path{fill:none;stroke:var(--hai,#7dcfff);stroke-width:2.4;
+  stroke-linecap:round;stroke-linejoin:round}`;
+
+const LINE_LISTEN_MARKUP = `<svg class="hai-line" data-wave="listen" viewBox="0 0 320 80" role="img" aria-label="Listening to you">
+  <path class="hai-line__path"></path>
+</svg>`;
+const LINE_LISTEN_CSS = `/* Listening, as a line. The same wave, but taller and busier and tapered at both
+   ends — a live waveform, which here is the right read: the microphone is open and
+   taking you in. data-wave="listen" sets the higher amplitude and faster drift. */
+.hai-line{display:block;width:min(340px,88%);height:auto;overflow:visible}
+.hai-line__path{fill:none;stroke:var(--hai,#7dcfff);stroke-width:2.4;
+  stroke-linecap:round;stroke-linejoin:round}`;
+
+const LINE_TANGLE_MARKUP = `<svg class="hai-line" data-wave="tangle" viewBox="0 0 320 80" role="img" aria-label="Processing">
+  <path class="hai-line__path"></path>
+</svg>`;
+const LINE_TANGLE_CSS = `/* Thinking, as a line. The line ties itself into a knot in the middle and works it
+   loose again — weighing something, not looking it up. There is no total to count
+   towards, so it never fills or completes; it tangles and unravels. Drawn each frame
+   by the shared line animator; data-wave="tangle" runs the knot generator. */
+.hai-line{display:block;width:min(340px,88%);height:auto;overflow:visible}
+.hai-line__path{fill:none;stroke:var(--hai,#7dcfff);stroke-width:2.4;
+  stroke-linecap:round;stroke-linejoin:round}`;
+
+const LINE_REACH_MARKUP = `<svg class="hai-line" data-wave="reach" viewBox="0 0 320 80" role="img" aria-label="Retrieving">
+  <path class="hai-line__path"></path>
+  <circle class="hai-line__head" r="3.4"></circle>
+</svg>`;
+const LINE_REACH_CSS = `/* Retrieving, as a line. The line falls almost flat and a bright head runs out
+   past the far end, stops -- it has asked, and is waiting on someone else -- and
+   comes back carrying a swell in the line beneath it, which settles into the
+   centre. Outbound empty-handed, inbound loaded: that asymmetry is the only thing
+   separating this from an indeterminate progress bar, so it must not be evened out.
+   Drawn each frame by the shared line animator; data-wave="reach" selects it. */
+.hai-line{display:block;width:min(340px,88%);height:auto;overflow:visible}
+.hai-line__path{fill:none;stroke:var(--hai,#7dcfff);stroke-width:2.4;
+  stroke-linecap:round;stroke-linejoin:round}
+.hai-line__head{fill:var(--hai,#7dcfff);opacity:0}`;
+
+const LINE_FOLD_MARKUP = `<svg class="hai-line" data-wave="fold" viewBox="0 0 320 80" role="img" aria-label="Calculating">
+  <path class="hai-line__path"></path>
+</svg>`;
+const LINE_FOLD_CSS = `/* Calculating, as a line. The two halves travel inward and stack into a short
+   dense band, then spring back out -- many values narrowing to one, in the line's
+   own geometry. It folds its own material and nothing arrives from outside, which
+   is what makes it internal work rather than retrieval.
+   Watch the floor on the band: a state mark must never look like it went away. */
+.hai-line{display:block;width:min(340px,88%);height:auto;overflow:visible}
+.hai-line__path{fill:none;stroke:var(--hai,#7dcfff);stroke-width:2.4;
+  stroke-linecap:round;stroke-linejoin:round}`;
+
+const LINE_CORRECT_MARKUP = `<svg class="hai-line" data-wave="correct" viewBox="0 0 320 80" role="img" aria-label="Correcting itself">
+  <path class="hai-line__path"></path>
+</svg>`;
+const LINE_CORRECT_CSS = `/* Correcting, as a line — a transition between modes, not a mode.
+
+   The badge does this by turning one way and then back the other. A 320-wide line
+   cannot borrow that: rotating it reads as tipping over. So the same argument is
+   made in the line's own material — the line PAUSES where it stood, COMES APART
+   into pieces that scatter and shrink, and then the pieces return and close up
+   into one complete line. Taken back, then done again.
+
+   The path is drawn each frame by the shared line animator; data-wave="correct"
+   selects the generator, and it plays ONCE from the time stamped on data-t0
+   rather than looping, because a correction that repeated on a timer would say
+   the system is permanently unsure rather than that it caught one thing.
+
+   IT NEVER GOES EMPTY. At the fullest break the pieces are zero-length segments,
+   which the round line cap still draws as dots. That is deliberate: this page
+   argues the mark carries continuity, which is the whole reason a failed mark
+   freezes where it stood instead of being swapped for an icon. Let the pieces
+   vanish and this becomes a reset rather than a correction.
+
+   Two neighbours it has to stay clear of. Fold, which is calculating, collapses
+   the line's width and keeps its amplitude — this keeps the width and breaks the
+   line itself. Reach, which is retrieving, carries a running head and stays whole
+   throughout. Nothing else on this page comes apart.
+
+   Self-contained on purpose. Every other line block ships the stroke with the
+   shape, and the one that did not — the line family's Notes — handed out an
+   invisible component from the copy panel for a day before anyone noticed. On
+   the page it would never show, because the injected stylesheet concatenates
+   every block; it only breaks for the person who copies this one on its own. */
+.hai-line[data-wave="correct"]{display:block;width:min(340px,88%);height:auto;overflow:visible}
+.hai-line[data-wave="correct"] .hai-line__path{fill:none;stroke:var(--hai,#7dcfff);
+  stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}`;
+
+const LINE_TYPE_MARKUP = `<svg class="hai-line hai-type" viewBox="0 0 320 80" role="img" aria-label="Writing a reply">
+  <line class="hai-type__ln" x1="24" y1="40" x2="296" y2="40" pathLength="100"></line>
+  <circle class="hai-type__head" cx="24" cy="40" r="3.4"></circle>
+</svg>`;
+const LINE_TYPE_CSS = `/* Typing, as a line. The reply is laid down left to right behind a bright head —
+   a line being composed, not text (the words are already appearing). Pure CSS:
+   pathLength is pinned to 100 so one dashoffset sweep draws the stroke on, and the
+   head is translated the same distance on the same clock so it rides the growing tip. */
+.hai-type__ln{fill:none;stroke:var(--hai,#7dcfff);stroke-width:2.6;stroke-linecap:round;
+  stroke-dasharray:100;stroke-dashoffset:100;opacity:0;
+  animation:hai-type-ln 2.6s linear infinite}
+.hai-type__head{fill:var(--hai,#7dcfff);opacity:0;
+  animation:hai-type-head 2.6s linear infinite}
+@keyframes hai-type-ln{
+  0%      {stroke-dashoffset:100;opacity:0}
+  5%      {opacity:.95}
+  70%     {stroke-dashoffset:0;opacity:.95}
+  86%     {stroke-dashoffset:0;opacity:.95}
+  98%,100%{stroke-dashoffset:0;opacity:0}
+}
+@keyframes hai-type-head{
+  0%      {transform:translateX(0);opacity:0}
+  5%      {opacity:1}
+  70%     {transform:translateX(272px);opacity:1}
+  76%     {transform:translateX(272px);opacity:0}
+  100%    {transform:translateX(272px);opacity:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .hai-type__ln{animation:none;stroke-dashoffset:0;opacity:.7}
+  .hai-type__head{animation:none;opacity:0}
+}`;
+
+const LINE_PLACE_MARKUP = `<div class="hai-place" role="img" aria-label="Introduction and needs done, now discussing pricing, meeting booking expected next">
+  <svg class="hai-place__svg" viewBox="0 0 320 34">
+    <line class="hai-mile__track" x1="32" y1="17" x2="288" y2="17"></line>
+    <line class="hai-mile__fill"  x1="32" y1="17" x2="160" y2="17"></line>
+    <circle class="hai-mile__dot is-done" cx="32"  cy="17" r="4.5"></circle>
+    <circle class="hai-mile__dot is-done" cx="96"  cy="17" r="4.5"></circle>
+    <circle class="hai-mile__ring" cx="160" cy="17" r="7"></circle>
+    <circle class="hai-mile__dot is-now"  cx="160" cy="17" r="4.5"></circle>
+    <circle class="hai-mile__dot is-todo" cx="224" cy="17" r="4.5"></circle>
+    <circle class="hai-mile__dot is-todo" cx="288" cy="17" r="4.5"></circle>
+  </svg>
+  <div class="hai-place__labels">
+    <span class="hai-place__lab">Introduction</span>
+    <span class="hai-place__lab">Needs</span>
+    <span class="hai-place__lab is-now">Pricing</span>
+    <span class="hai-place__lab is-next"><span class="hai-place__guess"><span class="g1">Meeting booking</span><span class="g2">Customisation</span></span></span>
+    <span class="hai-place__lab"></span>
+  </div>
+</div>`;
+const LINE_PLACE_CSS = `/* Orienting, as a line. The conversation reported along a timeline: settled
+   topics are filled and named, where you are now is brighter and pulses, what the
+   AI expects next is hollow and fainter and its topic is a guess that can change —
+   the fifth node is nothing-known-yet, a bare stop with no label. The nodes carry
+   the state; the labels are just the topics. Same five buckets as the badge's ring. */
+.hai-place{display:flex;flex-direction:column;gap:9px;width:min(390px,94%)}
+.hai-place__svg{display:block;width:100%;height:auto;overflow:visible}
+.hai-mile__track{stroke:var(--hai,#7dcfff);stroke-width:2;opacity:.18}
+.hai-mile__fill {stroke:var(--hai,#7dcfff);stroke-width:2;opacity:.85}
+.hai-mile__dot  {fill:var(--hai,#7dcfff);stroke:none}
+.hai-mile__dot.is-done{opacity:.9}
+.hai-mile__dot.is-now {opacity:1}
+.hai-mile__dot.is-todo{fill:none;stroke:var(--hai,#7dcfff);stroke-width:2;opacity:.34}
+.hai-mile__ring{fill:none;stroke:var(--hai,#7dcfff);stroke-width:2;opacity:.5;
+  transform-origin:160px 17px;animation:hai-mile 2.6s ease-in-out infinite}
+@keyframes hai-mile{0%,100%{transform:scale(1);opacity:.55}50%{transform:scale(1.5);opacity:.12}}
+
+/* Labels sit in five equal columns, so each centres under its node (nodes are at
+   10/30/50/70/90% of the width to match). */
+.hai-place__labels{display:flex;width:100%}
+.hai-place__lab{flex:1 1 0;min-width:0;padding:0 3px;text-align:center;
+  font-size:10.5px;line-height:1.3;color:var(--mut,#8b93a0)}
+.hai-place__lab.is-now{color:var(--txt,#e9ebee)}
+.hai-place__lab.is-next{color:var(--dim,#5c6573)}
+.hai-place__guess{position:relative;display:inline-grid;text-align:center}
+.hai-place__guess span{grid-area:1/1}
+.hai-place__guess .g1{animation:hai-guess-a 6.4s steps(1,end) infinite}
+.hai-place__guess .g2{animation:hai-guess-b 6.4s steps(1,end) infinite}
+@keyframes hai-guess-a{0%,48%{opacity:1}48.01%,100%{opacity:0}}
+@keyframes hai-guess-b{0%,48%{opacity:0}48.01%,100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  .hai-mile__ring{animation:none;transform:scale(1.25);opacity:.4}
+  .hai-place__guess .g1{animation:none;opacity:1}
+  .hai-place__guess .g2{animation:none;opacity:0}
+}`;
+
+const LINE_YIELD_MARKUP = `<div class="hai-yields hai-yields--line">
+  <div class="hai-yield" data-from="typing">
+    <span class="hai-yield__bar" aria-hidden="true"></span>
+    <div class="hai-lstage">${LINE_TYPE_MARKUP}${LINE_LISTEN_MARKUP}</div>
+    <span class="hai-yield__from">Generation</span>
+    <span class="hai-yield__arrow">&rarr;</span>
+    <span class="hai-yield__to">Listening</span>
+  </div>
+  <div class="hai-yield" data-from="thinking">
+    <span class="hai-yield__bar" aria-hidden="true"></span>
+    <div class="hai-lstage">${LINE_TANGLE_MARKUP}${LINE_LISTEN_MARKUP}</div>
+    <span class="hai-yield__from">Working</span>
+    <span class="hai-yield__arrow">&rarr;</span>
+    <span class="hai-yield__to">Listening</span>
+  </div>
+  <div class="hai-yield" data-from="waiting">
+    <span class="hai-yield__bar" aria-hidden="true"></span>
+    <div class="hai-lstage">${LINE_DRIFT_MARKUP}${LINE_LISTEN_MARKUP}</div>
+    <span class="hai-yield__from">Waiting</span>
+    <span class="hai-yield__arrow">&rarr;</span>
+    <span class="hai-yield__to">Listening</span>
+  </div>
+</div>
+<div class="hai-probe">
+  <!-- Short on purpose: this box is ~220px, and anything longer is cut off mid-word.
+       What the wording drops -- that all three yield at once -- the three rows beside
+       it already say. -->
+  <input id="yprobe" placeholder="Type a message, then Enter" autocomplete="off">
+  <span>you taking the turn</span>
+</div>`;
+const LINE_YIELD_CSS = `/* Yielding, as a line — the same join as the badge's, made of line parts. Each
+   row holds the running line and the listening line stacked in one place; the join
+   is a class, not a new animation. Whatever the line is doing gives way to the
+   listening wave the moment you take the turn. Exits (.34s) are quicker than
+   entrances (.44s), so it reads as giving way rather than being cut off. */
+.hai-yields--line{display:flex;flex-direction:column;gap:6px;width:100%;max-width:400px}
+.hai-yields--line .hai-yield{display:flex;align-items:center;gap:12px;padding:7px 2px}
+.hai-lstage{position:relative;width:150px;height:50px;flex:none;display:grid;place-items:center}
+.hai-lstage>.hai-line{position:absolute;width:100%;
+  transition:opacity .34s cubic-bezier(.4,0,.7,1), scale .34s cubic-bezier(.4,0,.7,1)}
+.hai-lstage>.hai-line[data-wave="listen"]{opacity:0;scale:.9}
+.hai-yield.is-yielded .hai-lstage>.hai-line:not([data-wave="listen"]){opacity:0;scale:.7}
+.hai-yield.is-yielded .hai-lstage>.hai-line[data-wave="listen"]{opacity:1;scale:1;
+  transition:opacity .44s cubic-bezier(.25,.9,.35,1), scale .44s cubic-bezier(.25,.9,.35,1)}
+@media (prefers-reduced-motion:reduce){
+  .hai-lstage>.hai-line{transition:none}
+}`;
+
+/* ---------- handover, as a line ----------
+   The same argument as the badge's pass, made of line parts: the AI is not
+   transformed into the person, it is DISPLACED by them. So this is two marks
+   crossing, never one path morphing into another — a morph would say the AI
+   became the human, which is the one thing the signal must not say.
+
+   WHAT SEPARATES THE TWO MARKS. In the badge family it is solidity and stillness
+   — translucent and re-forming against opaque and completely still. The line
+   family has to carry the same distinction in its own grammar: the AI's mark is
+   a drawn stroke that never repeats, the person's is a single straight rule that
+   does not move at all. Same colour in both, so hue carries none of the meaning.
+
+   WHY THE PERSON'S MARK NEEDS THE FIGURE. A still, straight line cannot stand on
+   its own here, because this family has already said that flat means nothing is
+   happening — the passive waiting line is exactly that. A bare rule would read as
+   the AI having gone quiet, which is the opposite of what handover means. The
+   silhouette is what turns "nothing is happening" into "someone else is here",
+   and it is the same glyph the badge uses, with no name attached, for the same
+   reason: named AI personas make a name worthless as proof of a human.
+
+   The rule is deliberately static and full width from the moment it appears. A
+   bar that grew would read as a progress bar, which is the collision this family
+   is most exposed to.
+
+   The animations sit on the two WRAPPERS, never on the marks. The AI's line is
+   redrawn every frame by the shared animator, so a CSS animation on the svg
+   itself would fight it; the wrapper is free. */
+
+const LINE_HAND_MARKUP = `<div class="hai-lhand" role="img" aria-label="The conversation is passed from the AI to a person">
+  <div class="hai-lhand__ai">
+    <svg class="hai-line" data-wave="tangle" viewBox="0 0 320 80" aria-hidden="true">
+      <path class="hai-line__path"></path>
+    </svg>
+  </div>
+  <div class="hai-lhand__human">
+    <svg class="hai-lhand__fig" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="8.4" r="3.9"></circle>
+      <path d="M4.5 20.2a7.5 7.5 0 0 1 15 0z"></path>
+    </svg>
+    <span class="hai-lhand__rule"></span>
+  </div>
+</div>`;
+
+const LINE_HAND_CSS = `/* The AI's line stays in flow and sets the stage height, so this component is
+   exactly as tall as every other line component at any width. The person's layer
+   is laid over it. Neither reflows the other as they cross: only translate, scale
+   and opacity move, and none of those affect layout. */
+.hai-lhand{position:relative;width:min(340px,88%)}
+.hai-lhand__ai{position:relative}
+.hai-lhand__ai .hai-line{width:100%}
+
+/* the person: one straight rule, completely still, at full strength — every axis
+   the opposite of the wave, and the same colour, so none of the difference is
+   carried by hue. The figure is what stops a still line reading as "gone quiet". */
+.hai-lhand__human{position:absolute;inset:0;display:flex;align-items:center;gap:11px}
+.hai-lhand__fig{width:19px;height:19px;flex:none;fill:var(--hai,#7dcfff);display:block}
+.hai-lhand__rule{flex:1;height:2.6px;border-radius:2px;background:var(--hai,#7dcfff)}
+
+/* 9s loop, the same timing as the badge's pass: the AI works, the two overlap
+   through the middle, the person holds, then it resets so the loop can run again. */
+.hai-lhand__ai{animation:hai-lhand-out 9s linear infinite}
+@keyframes hai-lhand-out{
+  0%,28%  {translate:0 0;    scale:1;  opacity:1;animation-timing-function:cubic-bezier(.5,0,.75,1)}
+  40%     {translate:-18px 0;scale:.94;opacity:.66}
+  54%,100%{translate:-34px 0;scale:.86;opacity:0}
+}
+.hai-lhand__human{opacity:0;animation:hai-lhand-in 9s linear infinite}
+@keyframes hai-lhand-in{
+  0%,30%  {translate:30px 0;opacity:0;animation-timing-function:cubic-bezier(.22,.85,.3,1)}
+  52%,88% {translate:0 0;   opacity:1}
+  96%,100%{translate:30px 0;opacity:0}
+}
+
+/* Reduced motion: no travel and no crossing. The two identities swap on opacity
+   alone, which still shows that the responder changed — and the person's mark is
+   still and straight in a still frame anyway, which is the whole point of it. */
+@media (prefers-reduced-motion:reduce){
+  .hai-lhand__ai,.hai-lhand__human{translate:0 0;scale:1}
+  .hai-lhand__ai{animation:hai-lhand-rm-ai 9s ease-in-out infinite}
+  .hai-lhand__human{animation:hai-lhand-rm 9s ease-in-out infinite}
+}
+@keyframes hai-lhand-rm{0%,38%{opacity:0}52%,90%{opacity:1}100%{opacity:0}}
+@keyframes hai-lhand-rm-ai{0%,38%{opacity:1}52%,90%{opacity:0}100%{opacity:1}}`;
+
+/* ---------- failure (Part 09) — a modifier, not a component ----------
+   Everything else in COMP is a thing to drop in. This one is a wrapper you put
+   AROUND whichever component was already running, so what the copy panel hands
+   out is a rule rather than a shape.
+
+   Three things are load-bearing and none of them are decoration.
+
+   (1) THE FADE LIVES ON THE WRAPPER, NEVER ON THE MARK. Two animations touching
+   the same property do not blend -- the later one wins outright and the earlier
+   one silently stops. That already cost this page the orb's wander once, during
+   the handover work. Nearly every mark here animates opacity somewhere, so the
+   modifier must not touch it directly. Wrapping also makes the arithmetic right
+   for free: the marks sit at their own resting opacities (.5, .55, .72 ...), and
+   a wrapper at .5 halves whatever that happens to be, so "half" means half of
+   this mark rather than half of solid.
+
+   (2) THE RESTING STATE IS THE FADED ONE. The blink returns TO full rather than
+   dropping to dark, so with animation switched off the mark simply rests faded
+   and still reads as wrong. Inverted, the still frame would look like working.
+
+   (3) THE FREEZE IS APPLIED, NOT AUTHORED. Nothing here draws a stopped shape.
+   The component's own animations are paused where they stand, which is what an
+   application would do at the moment of failure -- and it is why a stopped
+   retrieval still looks like a retrieval. On this page freezeFailed() below
+   pauses them a beat after the tile mounts, so the frame it stops on is a real
+   one rather than the first. */
+const FAILED_CSS = `/* Failure. Not a component -- a wrapper placed around whichever component was
+   running. Three things are doing the work, and none of them is the shape of the
+   mark, because the mark keeps its own shape on purpose: a stopped retrieval
+   still looks like a retrieval.
+
+   (1) A COLOUR THE PALETTE CANNOT PRODUCE. The wrapper redefines the single
+   component colour on itself, so every mark inside inherits it and no selector
+   has to touch a mark. It is a red rather than the amber the status message
+   used, because that amber was inside the range a component can be recoloured to
+   -- pick the warm swatch and a failed mark and a working one are the same
+   colour. Failure has to be a colour nothing else in the system can be.
+
+   (2) A GLYPH, BECAUSE COLOUR ALONE IS NOT ENOUGH. Anyone who cannot separate
+   the two hues gets nothing from the first point. The glyph is (!) and not (i):
+   (i) means information -- a note, nothing wrong -- which is not what this says.
+   It is drawn on the wrapper, so it holds steady while the mark behind it
+   blinks, and it is a darker red than the mark so the two do not merge.
+
+   (3) THE FADE LIVES ON THE WRAPPER'S CHILD, NEVER ON THE MARK. Two animations
+   touching one property do not blend -- the later wins outright and the earlier
+   silently stops -- and nearly every mark here animates opacity somewhere. Fading
+   a wrapper also makes the arithmetic right for free: the marks sit at their own
+   resting opacities, so half means half of THIS mark rather than half of solid.
+
+   And the resting state is the faded one. The blink returns TO full rather than
+   dropping to dark, so with animation off the mark simply rests faded, coloured
+   and marked, and still reads as wrong. Inverted, the still frame would look like
+   working. */
+/* Failure is a SEQUENCE, not a state you arrive in. The order matters and it is
+   the order a person actually needs: the mark is running as normal, it STOPS,
+   then it TURNS, then the badge ARRIVES, and only then does the mark begin to
+   BLINK. Everything landing at once reads as a different component being swapped
+   in. Staged, it reads as this work being interrupted -- which is the claim.
+
+   ~0ms   the component's own animations pause where they stand
+   250ms  the colour begins to turn, over 400ms
+   680ms  the mark settles back to half strength
+   720ms  the badge arrives at the corner
+   980ms  the mark begins to blink, from the half it already rests at
+
+   THE BADGE ITSELF NEVER MOVES. It is placed once and then holds. The mark is
+   what pulses, and it pulses on a long rest broken by one return to full rather
+   than on an even beat -- an even beat is a heartbeat, and a stopped thing must
+   not look alive. The badge sits at the CORNER and not the centre, which is what
+   lets the mark keep saying WHICH work stopped: a stopped retrieval still looks
+   like a retrieval, and that is the whole reason failure freezes the mark instead
+   of replacing it with an icon.
+
+   The wrapper carries all of it and the mark carries none of it. */
+.hai-failed{position:relative;display:grid;place-items:center}
+
+/* --hai stays registered even though failure no longer turns it: the component
+   colour picker animates between swatches and needs it to interpolate rather
+   than jump. */
+@property --hai{syntax:'<color>';inherits:true;initial-value:#7dcfff}
+
+/* The badge is two pieces -- a disc and the stroke on it -- because a single
+   element cannot be both a filled shape and text knocked out of it.
+
+   BOTH NEED A Z-INDEX, and this is not tidiness. Pseudo-elements sit in tree
+   order: ::before is the first child and ::after the last, so ::after paints over
+   the mark but ::before paints UNDER any positioned descendant of it -- which is
+   most of them, including every mark in the hero. An earlier build of this badge
+   was drawn correctly and was invisible for exactly that reason. */
+.hai-failed::before,
+.hai-failed::after{
+  position:absolute;top:-2px;right:-6px;width:15px;height:15px;
+  pointer-events:none;z-index:3;
+  opacity:0;scale:.4;
+  transition:opacity .24s cubic-bezier(.25,.9,.35,1), scale .24s cubic-bezier(.25,.9,.35,1)}
+
+/* the disc. Solid, and ringed in the surrounding ground so it separates from the
+   mark underneath however dense that mark happens to be. */
+.hai-failed::before{content:'';border-radius:50%;background:#e5484d;
+  box-shadow:0 0 0 2px var(--f-bg,var(--pan,#0a0c0f))}
+
+/* the stroke, knocked out of the disc. 5:1 on that red, and the same in either
+   theme. */
+.hai-failed::after{
+  content:'!';color:#0a0c0f;text-align:center;
+  font:700 11px/15px -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
+
+/* ---- the failure itself ---- */
+
+/* (1) STOP. Applied, not authored: the component's own animations are paused
+   where they stand, which is what an application would do at the moment of
+   failure, and why a stopped retrieval still looks like a retrieval. Reaching
+   past the fading child, so the blink itself is not caught by this. */
+.hai-failed.is-stopped > * *{animation-play-state:paused}
+
+/* (2) ARRIVE. The mark KEEPS ITS OWN COLOUR. An earlier build turned the whole
+   mark red, which put a large saturated shape in the middle of the tile and read
+   as an alarm rather than as work that has stopped -- too loud for something that
+   sits beside a message explaining itself in words. The red is now carried by the
+   badge alone: one small deliberate shape rather than the whole mark.
+   This also removes the last dependence on colour. The signal is the stop, the
+   fade and the (!) glyph, all of which survive both a colour-blind reader and
+   animation being switched off. The glyph is (!) and not (i) -- (i) means
+   information, a note, nothing wrong, which is not what this says. */
+.hai-failed.is-stopped::before,
+.hai-failed.is-stopped::after{opacity:1;scale:1;transition-delay:.72s}
+
+/* (4) SETTLE, then BLINK. Two animations rather than a declared value and one
+   animation, and that is deliberate: an animation beats a declared value whatever
+   the specificity, so staging it this way survives being dropped into a page that
+   already has opinions about these elements. The settle runs once and holds; the
+   blink takes over at the moment it finishes, from the same half it left off at.
+
+   THE RESTING STATE IS THE FADED ONE and the blink returns TO full: with animation
+   off the mark simply rests faded, coloured and badged, and still reads as wrong.
+   Inverted, the still frame would look like working.
+   The fade lives on the wrapper's child and never on the mark -- two animations
+   touching one property do not blend, the later wins outright and the earlier
+   silently stops, and nearly every mark here animates opacity somewhere. Fading
+   a wrapper also makes the arithmetic right for free: the marks sit at their own
+   resting opacities, so half means half of THIS mark rather than half of solid. */
+.hai-failed.is-stopped > *{
+  animation:hai-failed-settle .3s linear .68s forwards,
+            hai-failed .4s ease-in-out .98s infinite}
+@keyframes hai-failed-settle{from{opacity:1}to{opacity:.5}}
+/* Two and a half a second, evenly, with no rest between: blink blink blink. A long
+   pause broken by one flash reads as breathing, which is the opposite of what a
+   stopped mark should say -- this is an alarm, and an alarm repeats.
+   It was three, which is the ceiling in the flashing guidance; it came down to 2.5
+   because the whole treatment was too loud, not because three was unsafe. Three is
+   still the ceiling, so do not go back above it. The swing is .45 to 1 on a small
+   mark, deliberately short of a hard on/off at full contrast, which is what that
+   guidance is written about. */
+@keyframes hai-failed{0%,100%{opacity:1}50%{opacity:.45}}
+
+@media (prefers-reduced-motion:reduce){
+  /* No sequence to play, so the end of it is simply where the mark rests. */
+  .hai-failed,.hai-failed::before,.hai-failed::after{transition:none}
+  .hai-failed.is-stopped > *{animation:none;opacity:.5}
+}`;
+
+const failedWrap = inner => `<div class="hai-failed is-stopped">\n  <div class="hai-failed__mk">\n    ${inner.replace(/\n/g,'\n    ')}\n  </div>\n</div>`;
+
+const COMP = { '0-0': {markup:HALO_MARKUP, css:HALO_CSS},
+               '0-1': {markup:ORB_MARKUP,  css:ORB_CSS},
+               '0-2': {markup:WAIT_MARKUP,   css:WAIT_CSS},
+               '0-3': {markup:LISTEN_MARKUP, css:LISTEN_CSS},
+               '0-4': {markup:HANDOVER_MARKUP, css:HANDOVER_CSS},
+               '0-5': {markup:YIELD_MARKUP,  css:YIELD_CSS_TEXT},
+               '0-7': {markup:STAGE_MARKUP,  css:STAGE_CSS},
+               '0-8': {markup:NOTES_MARKUP,    css:NOTES_CSS},
+
+               '1-0': {markup:LINE_TYPE_MARKUP,   css:LINE_TYPE_CSS},
+               '1-1': {markup:LINE_TANGLE_MARKUP, css:LINE_TANGLE_CSS},
+               '1-2': {markup:LINE_DRIFT_MARKUP,  css:LINE_DRIFT_CSS},
+               '1-3': {markup:LINE_LISTEN_MARKUP, css:LINE_LISTEN_CSS},
+               /* The line family's handover carries the processing line inside it, so
+                  the copy panel hands out that line's CSS with it -- otherwise Copy
+                  gives a stage with nothing drawn in it. */
+               '1-4': {markup:LINE_HAND_MARKUP,   css:LINE_TANGLE_CSS+'\n\n'+LINE_HAND_CSS},
+               '1-5': {markup:LINE_YIELD_MARKUP,  css:LINE_YIELD_CSS},
+               '1-7': {markup:LINE_PLACE_MARKUP,  css:LINE_PLACE_CSS},
+               /* The line family's notes are the only component whose CSS is written
+                  as an override rather than a whole block, so the copy panel has to
+                  hand out the shell with it -- otherwise Copy gives a broken
+                  component. The shell repeats in the injected stylesheet below, which
+                  is harmless: identical rules, so the later copy simply wins. */
+               '1-8': {markup:LINE_NOTES_MARKUP,  css:NOTES_CSS+'\n\n'+LINE_NOTES_CSS},
+
+               /* Part 07 in both families. The markup is only an example of the
+                  wrapper in use -- driveFailure() swaps which component sits
+                  inside it. The CSS is the whole deliverable. */
+               '0-6': {markup:failedWrap(ORB_MARKUP),        css:FAILED_CSS},
+               '1-6': {markup:failedWrap(LINE_TANGLE_MARKUP), css:FAILED_CSS} };
+
+/* ---- the modes of Working ----
+   Part 02 is one part with three modes rather than three parts. Thinking is the
+   one it rests in and returns to, so it is first and is the default; the other two
+   are only shown when the distinction can be made honestly. Indexed by family, in
+   the same order as FAMS. */
+const MODES = [
+  [ {k:'thinking',    label:'Processing',  markup:ORB_MARKUP,   css:ORB_CSS},
+    {k:'retrieving',  label:'Retrieving',  markup:FETCH_MARKUP, css:FETCH_CSS},
+    {k:'calculating', label:'Calculating', markup:SOLVE_MARKUP, css:SOLVE_CSS} ],
+  [ {k:'thinking',    label:'Processing',  markup:LINE_TANGLE_MARKUP, css:LINE_TANGLE_CSS},
+    {k:'retrieving',  label:'Retrieving',  markup:LINE_REACH_MARKUP,  css:LINE_REACH_CSS},
+    {k:'calculating', label:'Calculating', markup:LINE_FOLD_MARKUP,   css:LINE_FOLD_CSS} ]
+];
+
+/* ---- correcting itself ----
+   Kept OUT of MODES on purpose. A mode names what kind of work is happening;
+   correcting says the work already done was wrong, which is a judgement about
+   earlier work rather than a place where work happens. Putting it in the bar
+   would offer it as a fourth kind of work and undo the argument. It is a
+   transition, so it plays between modes and gets its own control. */
+const CORRECTION = [
+  {markup:CORRECT_MARKUP,      css:CORRECT_CSS},
+  {markup:LINE_CORRECT_MARKUP, css:LINE_CORRECT_CSS}
+];
+/* The demonstration length. Not the rule -- in a live interface the beat at the
+   collapsed point holds until the work has actually been redone, the same way
+   retrieving holds, because nobody knows in advance how long that takes. */
+const CORRECT_MS = 5000;
+
+/* ---- one source for the component CSS ----
+   The blocks above are what the copy panel hands out, so they are also what the
+   page renders. Inserted at the very top of the head, which is where the second
+   copy used to sit, so the frame-local overrides at the end of the stylesheet
+   still outrank the component defaults. */
+(function(){
+  const el=document.createElement('style');
+  el.id='hai-component-css';
+  /* The mode blocks are handed out by the copy panel too, so they belong to the
+     same single source. Duplicates are harmless -- the modes reuse the thinking
+     block, which is already in COMP -- but they must not be missing. */
+  const all=[...Object.values(COMP), ...MODES.flat(), ...CORRECTION];
+  el.textContent=all.map(c=>c.css).join('\n\n');
+  document.head.insertBefore(el, document.head.firstChild);
+})();
+
+const HAI_LINE = (function(){
+  const RM = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const X0=24, X1=296, MID=40, STEP=4;
+  const CFG={
+    /* Waiting, as a line: a slow shallow breath rather than a wander. It cannot
+       simply stop the way waiting's badge core now does -- a flat still line is
+       the error signal -- so it stays alive and gets quiet instead. */
+    drift : {amp:2.8, k1:0.019, k2:0.010, s1:0.0006, s2:-0.0004, env:false},
+    listen: {amp:10,  k1:0.055, k2:0.11,  s1:0.006,  s2:0.0033,  env:true }
+  };
+  function path(t,c,mul){
+    const a=c.amp*(mul===undefined?1:mul);
+    let d='';
+    for(let x=X0;x<=X1;x+=STEP){
+      const u=(x-X0)/(X1-X0);
+      const e=c.env?Math.sin(u*Math.PI):1;
+      const y=MID+(Math.sin(x*c.k1+t*c.s1)*a+Math.sin(x*c.k2+t*c.s2)*a*0.5)*e;
+      d+=(x===X0?'M':'L')+x.toFixed(1)+' '+y.toFixed(2)+' ';
+    }
+    return d;
+  }
+
+  /* Listening, as a line. The same wave, but its height is set by an envelope
+     built from three incommensurate periods, so it swells and falls without ever
+     settling into a rhythm -- it should look FED FROM OUTSIDE rather than
+     self-timed, which is what listening actually is. The floor is 0.34 and never
+     zero: silence is still receiving, and a line that flattens is the error
+     signal. This is also what keeps it apart from waiting now that waiting is
+     quiet -- they differ in what drives them, not only in height. */
+  function driven(t){
+    const e = 0.34 + 0.66 * (
+        0.45*(0.5+0.5*Math.sin(t*0.0021))
+      + 0.34*(0.5+0.5*Math.sin(t*0.0053+1.7))
+      + 0.21*(0.5+0.5*Math.sin(t*0.0119+4.1)));
+    return path(t, CFG.listen, e);
+  }
+  /* Thinking: the line ties itself into a row of simple loops and works them loose
+     again. k swells 0->1->0; a circular offset (cos,sin of a phase that turns N
+     times along the line) makes N clean loops when k is high and a straight line
+     when it is low. The whole phase rotates slowly, so the loops curl rather than
+     sit still. env holds the two ends straight so it stays tidy across the width. */
+  function tangle(t){
+    const raw=(1-Math.cos(t*0.0011))/2, k=raw*raw*(3-2*raw);
+    const N=4, R=17, ez=x=>{x=Math.max(0,Math.min(1,x));return x*x*(3-2*x);};
+    let d='', S=140;
+    for(let i=0;i<=S;i++){
+      const s=i/S, baseX=X0+s*(X1-X0), env=ez(Math.min(s,1-s)/0.14), ph=s*6.2832*N + t*0.003;
+      d+=(i===0?'M':'L')+(baseX+k*env*R*Math.cos(ph)).toFixed(1)+' '+(MID+k*env*R*Math.sin(ph)).toFixed(2)+' ';
+    }
+    return d;
+  }
+  const ez=x=>{x=Math.max(0,Math.min(1,x));return x*x*(3-2*x);};
+  const S2=150, CX=160;
+
+  /* Retrieving: a head runs out past the far end, stops -- it has asked, and is
+     waiting on another system -- and returns carrying a swell in the line beneath
+     it, which settles into the centre. The outbound leg is deliberately
+     empty-handed; that asymmetry is the only thing that separates this from an
+     indeterminate progress bar, which runs the same way and never brings anything
+     back. Writes the head position into HEAD for draw() to place. */
+  let HEAD=null;
+  function reach(t){
+    const T=3000, p=(t%T)/T; let rx,h;
+    if(p<0.34)      { rx=CX+(290-CX)*ez(p/0.34);            h=0; }
+    else if(p<0.46) { rx=290;                                h=ez((p-0.34)/0.12)*11; }
+    else if(p<0.84) { rx=290+(CX-290)*ez((p-0.46)/0.38);     h=11; }
+    else            { rx=CX;                                 h=11*(1-ez((p-0.84)/0.16)); }
+    let d='';
+    for(let i=0;i<=S2;i++){
+      const s=i/S2, x=X0+s*(X1-X0), dx=(x-rx)/25;
+      const y=MID+Math.sin(x*0.03+t*0.001)*1.5 - h*Math.exp(-dx*dx);
+      d+=(i===0?'M':'L')+x.toFixed(1)+' '+y.toFixed(2)+' ';
+    }
+    HEAD=[rx, MID+Math.sin(rx*0.03+t*0.001)*1.5-h, p<0.02?0:1];
+    return d;
+  }
+
+  /* Calculating: the two halves travel inward and stack into a dense band, then
+     spring back. The line folds its own material -- nothing arrives from outside,
+     which is what keeps it internal work rather than retrieval. The amplitude term
+     keeps a floor under the band so the mark never reads as having gone away. */
+  function fold(t){
+    const T=2600, p=(t%T)/T;
+    const q = p<0.55 ? ez(p/0.55) : 1-ez((p-0.55)/0.45);
+    let d='';
+    for(let i=0;i<=S2;i++){
+      const s=i/S2, bx=X0+s*(X1-X0);
+      const x=CX+(bx-CX)*(1-0.72*q), y=MID+Math.sin(s*Math.PI*7+t*0.0035)*(2.4+q*9);
+      d+=(i===0?'M':'L')+x.toFixed(1)+' '+y.toFixed(2)+' ';
+    }
+    return d;
+  }
+
+  /* Correcting, as a line. The badge's gesture is a turn reversed, which does not
+     transfer -- rotating a 320-wide line reads as tipping over rather than as
+     undoing. So the line family makes the same argument in its own material: the
+     line PAUSES where it stood, COMES APART into pieces that scatter and shrink,
+     and then the pieces return and close up into one complete line again.
+
+     Both families are saying the same thing -- the work is taken back and done
+     again -- which is the point. What they must not say is different things.
+
+     IT NEVER GOES EMPTY, and that is not a detail. This page argues that the
+     mark carries continuity: the same work, still alive, which is the whole
+     reason a failed mark freezes where it stood instead of being swapped for an
+     icon. So at the fullest break the pieces are zero-length segments, which a
+     round line cap still draws as dots. Something is always there. Let the
+     pieces vanish completely and this becomes a reset, or a replacement, and the
+     continuity argument goes with it.
+
+     The knot it was in flattens once as it comes apart and does not return, so
+     what closes up at the end is a clean line -- a finished correction, handed
+     straight back to thinking.
+
+     Against its neighbours: fold, which is calculating, collapses the line's
+     width and keeps its amplitude, where this keeps the width and breaks the
+     line itself; reach, which is retrieving, carries a running head and stays
+     whole throughout. Nothing else on this page comes apart.
+
+     Plays ONCE from the time stamped on data-t0 rather than looping -- a
+     correction that repeated on a timer would say the system is permanently
+     unsure rather than that it caught one thing. */
+  function correct(t, svg){
+    const T=5000, t0=+(svg&&svg.dataset.t0||0);
+    const p=Math.min(Math.max((t-t0)/T,0),1);
+
+    /* how far apart it has come: whole -> scattered points -> whole */
+    let br;
+    if(p<0.06)      br=0;                        /* the pause, where it stood */
+    else if(p<0.40) br=ez((p-0.06)/0.34);        /* coming apart */
+    else if(p<0.58) br=1;                        /* the hold. Stretches in real use */
+    else if(p<0.94) br=1-ez((p-0.58)/0.36);      /* closing up again */
+    else            br=0;
+
+    /* the knot flattens as it breaks and stays flat, so the line that closes up
+       at the end is a complete one rather than the tangle it started in */
+    const kk = 1-ez(Math.min(Math.max((p-0.06)/0.26,0),1));
+
+    /* a point on the line it was drawing, so the pieces are made of the shape it
+       had rather than of a new one */
+    const R=17, N=4;
+    const at = x => {
+      const s=(x-X0)/(X1-X0), env=ez(Math.min(s,1-s)/0.14), ph=s*6.2832*N + t*0.003;
+      return [x + kk*env*R*Math.cos(ph), MID + kk*env*R*Math.sin(ph)];
+    };
+
+    const PIECES=6, SUB=12, span=(X1-X0)/PIECES;
+    let d='';
+    for(let i=0;i<PIECES;i++){
+      const a=X0+i*span, cxi=a+span/2, half=span/2;
+      const L=half*(1-br);                       /* zero at full break -> a dot */
+      /* 0.42 puts the outermost pieces just on the edge of the 320-wide box at
+         full break. Higher and they leave it -- the stage does not clip, so they
+         would spill over the panel rather than being cut off. */
+      const dx=(cxi-CX)*0.42*br;                 /* pieces drift outward */
+      const dy=((i%2)?1:-1)*(5+i*2.2)*br;        /* and off the line, alternating */
+      for(let j=0;j<=SUB;j++){
+        const q=at(cxi-L+(2*L)*(j/SUB));
+        d+=(j===0?'M':'L')+(q[0]+dx).toFixed(1)+' '+(q[1]+dy).toFixed(2)+' ';
+      }
+    }
+    return d;
+  }
+
+  const GEN={tangle, reach, fold, correct, listen:driven};
+
+  /* A frozen line is skipped rather than redrawn, which leaves its last path on
+     screen exactly as it was. That is how the line family stops: it is not given
+     a stopped shape to draw, it is simply no longer drawn. */
+  function draw(t){
+    document.querySelectorAll('.hai-line[data-wave]:not([data-frozen])').forEach(svg=>{
+      const p=svg.querySelector('.hai-line__path'); if(!p) return;
+      const w=svg.dataset.wave;
+      HEAD=null;
+      p.setAttribute('d', GEN[w] ? GEN[w](t, svg) : path(t, CFG[w]||CFG.drift));
+      const head=svg.querySelector('.hai-line__head');
+      if(head){
+        if(HEAD){ head.setAttribute('cx',HEAD[0].toFixed(1));
+                  head.setAttribute('cy',HEAD[1].toFixed(2));
+                  head.style.opacity=HEAD[2]; }
+        else head.style.opacity=0;
+      }
+    });
+  }
+  if(RM){ return {still:()=>draw(1200), reduced:true}; }
+  (function loop(now){ draw(now); requestAnimationFrame(loop); })(0);
+  return {still:()=>{}, reduced:false};
+})();
+/* ---- the marks that need a driver ----
+   Three states are not carried by CSS alone. These are the same light drivers the
+   source page used, re-pointed at whichever mark is currently mounted, and they
+   are torn down when the slide is switched. */
+const MARK_REDUCED = matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+function driveMark(root, index){
+  const timers = [];
+  const after = (fn, ms) => timers.push(setTimeout(fn, ms));
+  const every = (fn, ms) => timers.push(setInterval(fn, ms));
+
+  if(index === 5){                                    /* Yielding: play the handback */
+    const units = [...root.querySelectorAll('.hai-yield')];
+    if(units.length){
+      if(MARK_REDUCED) units.forEach(u => u.classList.add('is-yielded'));
+      else { let on = false; every(() => { on = !on; units.forEach(u => u.classList.toggle('is-yielded', on)); }, 3400); }
+    }
+  }
+
+  if(index === 6){                                    /* Error handling: let the line show its last motion, then freeze */
+    root.querySelectorAll('.hai-line[data-wave]').forEach(l => after(() => { l.dataset.frozen = '1'; }, 1500));
+  }
+
+  if(index === 8){                                    /* Notes: fill the checklist on a loop */
+    const rows  = [...root.querySelectorAll('.nrow')];
+    const extra = [...root.querySelectorAll('.nextra')];
+    const count = root.querySelector('.ncount');
+    const tally = () => { if(count) count.textContent = rows.filter(r => r.classList.contains('on')).length + ' / ' + rows.length; };
+    if(MARK_REDUCED){ rows.forEach((r, k) => { if(k === 0 || k === 2) r.classList.add('on'); }); tally(); }
+    else if(rows.length){
+      let step = 0;
+      (function tick(){
+        if(step === 0){ rows.forEach(r => r.classList.remove('on')); extra.forEach(r => r.classList.remove('on')); }
+        else if(step === 1){ if(rows[0]) rows[0].classList.add('on'); }
+        else if(step === 2){ if(rows[2]) rows[2].classList.add('on'); }
+        else if(step === 3){ extra.forEach(r => r.classList.add('on')); }
+        tally();
+        step = (step + 1) % 5;
+        after(tick, step === 1 ? 1200 : step === 0 ? 400 : 1400);
+      })();
+    }
+  }
+
+  return () => { timers.forEach(t => { clearTimeout(t); clearInterval(t); }); };
+}
+
+/* A mark slide: the component's own markup, mounted straight into the stage.
+   No iframe -- these are small, and they take the stage's light palette. */
+function mountMark(viewport, slide){
+  const host = document.createElement('div');
+  host.className = 'mark-host';
+  host.innerHTML = '<div class="stageinner" style="--z:' + (slide.zoom || 1) + '">' + slide.markup + '</div>';
+  viewport.replaceChildren(host);
+  return driveMark(host, slide.index);
+}
+
+const HERO_MARKUP="\u003cdiv class=\"heroframe\" id=\"frame\" data-t=\"light\">\n    \u003cdiv class=\"rail\" aria-hidden=\"true\">\u003c/div>\n\n    \u003cdiv class=\"screen\">\n      \u003cdiv class=\"feedclip\">\u003cdiv class=\"feed\" id=\"feed\">\u003c/div>\u003c/div>\n      \u003cdiv class=\"live\">\n        \u003cdiv class=\"markhost\" id=\"hInline\">\n          \u003cdiv class=\"slotmark\" id=\"slotmark\">\n          \u003cdiv class=\"mark\" data-s=\"typing\">\u003cdiv class=\"hai-halo\" role=\"img\" aria-label=\"Writing a reply\">\n            \u003cspan class=\"hai-halo__ring\">\u003c/span>\u003cspan class=\"hai-halo__ring\">\u003c/span>\n            \u003cspan class=\"hai-halo__ring\">\u003c/span>\u003cspan class=\"hai-halo__dot\">\u003c/span>\n          \u003c/div>\u003c/div>\n          \u003cdiv class=\"mark\" data-s=\"thinking\">\u003cdiv class=\"hai-orb\" role=\"img\" aria-label=\"Processing\">\u003c/div>\u003c/div>\n          \u003cdiv class=\"mark\" data-s=\"waiting\">\u003csvg class=\"hai-wait\" viewBox=\"0 0 44 44\" role=\"img\" aria-label=\"Waiting for you\">\n            \u003ccircle class=\"hai-wait__track\" cx=\"22\" cy=\"22\" r=\"14\">\u003c/circle>\n            \u003ccircle class=\"hai-wait__core\"  cx=\"22\" cy=\"22\" r=\"3.6\">\u003c/circle>\n          \u003c/svg>\u003c/div>\n          \u003cdiv class=\"mark\" data-s=\"listening\">\u003csvg class=\"hai-listen\" viewBox=\"0 0 44 44\" role=\"img\" aria-label=\"Listening to you\">\n            \u003ccircle class=\"hai-listen__track\" cx=\"22\" cy=\"22\" r=\"13\">\u003c/circle>\n            \u003ccircle class=\"hai-listen__core\"  cx=\"22\" cy=\"22\" r=\"4.4\">\u003c/circle>\n          \u003c/svg>\u003c/div>\n          \u003c/div>\n        \u003c/div>\n        \u003cdiv class=\"livetext\" id=\"livetext\">\u003c/div>\n      \u003c/div>\n      \u003c!-- The status line. A fixed lane: it never travels, in either family, and it\n           holds whatever the AI is doing right now in words. The mark says work is\n           happening and which work stopped; the words say what that work is and, when\n           it fails, what to do about it. Neither is sufficient alone.\n           Where it sits is a layout decision, not a rule \u2014 above the input is this\n           demo's answer, not the design language's. Announced politely so a screen\n           reader gets what the mark cannot give it. -->\n      \u003cdiv class=\"statline\" id=\"statline\" aria-live=\"polite\">\u003cspan class=\"hstat\" id=\"hstat\">\u003c/span>\u003c/div>\n      \u003c!-- the line family's state indicator: a wide line under the reply. Hidden\n           unless the frame is in the line family; setMark() drives it in step\n           with the badge mark above, so a family switch mid-demo just reveals\n           whichever is already on. -->\n      \u003cdiv class=\"heroline\" id=\"heroline\" aria-hidden=\"true\">\n        \u003cdiv class=\"hln\" data-s=\"typing\">\u003csvg class=\"hai-line hai-type\" viewBox=\"0 0 320 80\" preserveAspectRatio=\"none\" role=\"img\" aria-label=\"Writing a reply\">\n          \u003cline class=\"hai-type__ln\" x1=\"24\" y1=\"40\" x2=\"296\" y2=\"40\" pathLength=\"100\">\u003c/line>\n          \u003ccircle class=\"hai-type__head\" cx=\"24\" cy=\"40\" r=\"3.4\">\u003c/circle>\n        \u003c/svg>\u003c/div>\n        \u003cdiv class=\"hln\" data-s=\"thinking\">\u003csvg class=\"hai-line\" data-wave=\"tangle\" viewBox=\"0 0 320 80\" preserveAspectRatio=\"none\" role=\"img\" aria-label=\"Processing\">\u003cpath class=\"hai-line__path\">\u003c/path>\u003c/svg>\u003c/div>\n        \u003cdiv class=\"hln\" data-s=\"waiting\">\u003csvg class=\"hai-line\" data-wave=\"drift\" viewBox=\"0 0 320 80\" preserveAspectRatio=\"none\" role=\"img\" aria-label=\"Waiting for you\">\u003cpath class=\"hai-line__path\">\u003c/path>\u003c/svg>\u003c/div>\n        \u003cdiv class=\"hln\" data-s=\"listening\">\u003csvg class=\"hai-line\" data-wave=\"listen\" viewBox=\"0 0 320 80\" preserveAspectRatio=\"none\" role=\"img\" aria-label=\"Listening to you\">\u003cpath class=\"hai-line__path\">\u003c/path>\u003c/svg>\u003c/div>\n      \u003c/div>\n      \u003cdiv class=\"appfoot\">\n        \u003cdiv class=\"markhost\" id=\"hFoot\">\u003c/div>\n        \u003cinput id=\"probe\" placeholder=\"Type a message \u2014 it yields when you send\" autocomplete=\"off\">\n        \u003cspan class=\"pcaret\" id=\"pcaret\">\u003c/span>\u003cspan id=\"meas\">\u003c/span>\n        \u003cdiv class=\"send\" aria-hidden=\"true\">\u003csvg viewBox=\"0 0 14 14\">\u003cpath d=\"M7 12V2M3 6l4-4 4 4\"/>\u003c/svg>\u003c/div>\n      \u003c/div>\n    \u003c/div>\n\n    \u003cdiv class=\"aside\">\n      \u003cdiv class=\"card\" id=\"placingCard\">\n        \u003cdiv class=\"cardl\">Progress\n          \u003cbutton class=\"notesbtn\" id=\"notesbtn\" type=\"button\"\n                  aria-expanded=\"false\" aria-controls=\"notesCard\">\n            \u003csvg viewBox=\"0 0 12 12\" aria-hidden=\"true\">\u003cpath d=\"M1.6 2.6h8.8M1.6 6h8.8M1.6 9.4h5.4\"/>\u003c/svg>\n            Notes\u003cspan class=\"notesn\" id=\"notesn\">\u003c/span>\n          \u003c/button>\n        \u003c/div>\n        \u003cdiv class=\"pystage\">\n          \u003csvg class=\"hai-stage__ring\" viewBox=\"0 0 56 56\" role=\"img\" aria-label=\"Where the conversation has got to\">\n          \u003ccircle class=\"hai-stage__seg\" cx=\"28\" cy=\"28\" r=\"17\">\u003c/circle>\n          \u003ccircle class=\"hai-stage__seg\" cx=\"28\" cy=\"28\" r=\"17\">\u003c/circle>\n          \u003ccircle class=\"hai-stage__seg\" cx=\"28\" cy=\"28\" r=\"17\">\u003c/circle>\n          \u003ccircle class=\"hai-stage__seg\" cx=\"28\" cy=\"28\" r=\"17\">\u003c/circle>\n          \u003ccircle class=\"hai-stage__seg\" cx=\"28\" cy=\"28\" r=\"17\">\u003c/circle>\n        \u003c/svg>\n          \u003c!-- the line family's Progress: the same five stages as a horizontal\n               timeline instead of a ring. Driven by paintRing() alongside the ring. -->\n          \u003csvg class=\"hai-linestage\" viewBox=\"0 0 112 20\" role=\"img\" aria-label=\"Where the conversation has got to\">\n            \u003cline class=\"ls-track\" x1=\"8\" y1=\"10\" x2=\"104\" y2=\"10\">\u003c/line>\n            \u003cline class=\"ls-fill\"  x1=\"8\" y1=\"10\" x2=\"8\" y2=\"10\">\u003c/line>\n            \u003ccircle class=\"ls-dot\" cx=\"8\"   cy=\"10\" r=\"3.4\">\u003c/circle>\n            \u003ccircle class=\"ls-dot\" cx=\"32\"  cy=\"10\" r=\"3.4\">\u003c/circle>\n            \u003ccircle class=\"ls-dot\" cx=\"56\"  cy=\"10\" r=\"3.4\">\u003c/circle>\n            \u003ccircle class=\"ls-dot\" cx=\"80\"  cy=\"10\" r=\"3.4\">\u003c/circle>\n            \u003ccircle class=\"ls-dot\" cx=\"104\" cy=\"10\" r=\"3.4\">\u003c/circle>\n          \u003c/svg>\n          \u003cdiv class=\"pylabels\" id=\"pylabels\">\u003c/div>\n        \u003c/div>\n      \u003c/div>\n      \u003cdiv class=\"card notesdrawer\" id=\"notesCard\" style=\"flex:1\">\n        \u003cdiv class=\"cardl\">Notes\n          \u003cbutton class=\"notesx\" id=\"notesx\" type=\"button\" aria-label=\"Close notes\">\n            \u003csvg viewBox=\"0 0 12 12\" aria-hidden=\"true\">\u003cpath d=\"M3 3l6 6M9 3l-6 6\"/>\u003c/svg>\n          \u003c/button>\n        \u003c/div>\n        \u003cdiv class=\"req\" id=\"req\">\n          \u003cdiv class=\"reqhd\">Qualifying\u003cspan class=\"reqn\" id=\"reqn\">0 / 4\u003c/span>\u003c/div>\n          \u003cdiv class=\"reqrows\">\n          \u003cdiv class=\"reqrow\" data-slot=\"company\">\u003cspan class=\"reqbox\">\u003csvg viewBox=\"0 0 12 12\" aria-hidden=\"true\">\u003cpath d=\"M2 6.3 5 9.2 10 3\"/>\u003c/svg>\u003c/span>\u003cspan class=\"reqtx\">\u003cspan class=\"reqlbl\">Company\u003c/span>\u003cspan class=\"reqval\">\u003cspan>\u003c/span>\u003c/span>\u003c/span>\u003c/div>\n          \u003cdiv class=\"reqrow\" data-slot=\"team\">\u003cspan class=\"reqbox\">\u003csvg viewBox=\"0 0 12 12\" aria-hidden=\"true\">\u003cpath d=\"M2 6.3 5 9.2 10 3\"/>\u003c/svg>\u003c/span>\u003cspan class=\"reqtx\">\u003cspan class=\"reqlbl\">Team size\u003c/span>\u003cspan class=\"reqval\">\u003cspan>\u003c/span>\u003c/span>\u003c/span>\u003c/div>\n          \u003cdiv class=\"reqrow\" data-slot=\"need\">\u003cspan class=\"reqbox\">\u003csvg viewBox=\"0 0 12 12\" aria-hidden=\"true\">\u003cpath d=\"M2 6.3 5 9.2 10 3\"/>\u003c/svg>\u003c/span>\u003cspan class=\"reqtx\">\u003cspan class=\"reqlbl\">Need\u003c/span>\u003cspan class=\"reqval\">\u003cspan>\u003c/span>\u003c/span>\u003c/span>\u003c/div>\n          \u003cdiv class=\"reqrow\" data-slot=\"budget\">\u003cspan class=\"reqbox\">\u003csvg viewBox=\"0 0 12 12\" aria-hidden=\"true\">\u003cpath d=\"M2 6.3 5 9.2 10 3\"/>\u003c/svg>\u003c/span>\u003cspan class=\"reqtx\">\u003cspan class=\"reqlbl\">Budget\u003c/span>\u003cspan class=\"reqval\">\u003cspan>\u003c/span>\u003c/span>\u003c/span>\u003c/div>\n          \u003c/div>\n          \u003c!-- the line family's notes: the same four fields as a vertical spine.\n               Driven by fillSlot() alongside the checklist. -->\n          \u003cdiv class=\"reqspine\" id=\"reqspine\" aria-hidden=\"true\">\n            \u003cdiv class=\"rsrow\" data-slot=\"company\">\u003cspan class=\"rsnode\">\u003c/span>\u003cspan class=\"rstx\">\u003cspan class=\"rslbl\">Company\u003c/span>\u003cspan class=\"rsval\">\u003cspan>\u003c/span>\u003c/span>\u003c/span>\u003c/div>\n            \u003cdiv class=\"rsrow\" data-slot=\"team\">\u003cspan class=\"rsnode\">\u003c/span>\u003cspan class=\"rstx\">\u003cspan class=\"rslbl\">Team size\u003c/span>\u003cspan class=\"rsval\">\u003cspan>\u003c/span>\u003c/span>\u003c/span>\u003c/div>\n            \u003cdiv class=\"rsrow\" data-slot=\"need\">\u003cspan class=\"rsnode\">\u003c/span>\u003cspan class=\"rstx\">\u003cspan class=\"rslbl\">Need\u003c/span>\u003cspan class=\"rsval\">\u003cspan>\u003c/span>\u003c/span>\u003c/span>\u003c/div>\n            \u003cdiv class=\"rsrow\" data-slot=\"budget\">\u003cspan class=\"rsnode\">\u003c/span>\u003cspan class=\"rstx\">\u003cspan class=\"rslbl\">Budget\u003c/span>\u003cspan class=\"rsval\">\u003cspan>\u003c/span>\u003c/span>\u003c/span>\u003c/div>\n          \u003c/div>\n        \u003c/div>\n        \u003cdiv class=\"notes\" id=\"heroNotes\">\u003c/div>\n      \u003c/div>\n    \u003c/div>\n    \u003cdiv class=\"notesscrim\" id=\"notesscrim\">\u003c/div>\n  \u003c/div>\n  \u003cbutton class=\"replay\" id=\"replay\">Replay the exchange\u003c/button>";
+function HERO_START(host){
+
+/* the hero demo's own script, moved in from hero-demo.html */
+const RM = matchMedia('(prefers-reduced-motion:reduce)').matches;
+const feed=document.getElementById('feed'), slot=document.getElementById('slotmark'),
+      livetext=document.getElementById('livetext'), probe=document.getElementById('probe'),
+      pcaret=document.getElementById('pcaret'),
+      meas=document.getElementById('meas'), frame=document.getElementById('frame'),
+      segs=[...document.querySelectorAll('.pystage .hai-stage__seg')];
+
+const marks={}; [...slot.querySelectorAll('.mark')].forEach(m=>marks[m.dataset.s]=m);
+const TICK='<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1.8 6.4 4.5 9.1 10.2 3"/></svg>';
+
+let token=0, cur=null, stageIx=1;
+/* Set the moment a person types into the hero input. It does not stop the AI —
+   it only stops the script from typing as the person, which would otherwise
+   overwrite what they are writing. See the send handler far below. */
+let handedOver=false;
+/* The tempo of the whole demo, in one place. This was a checkbox in the mock so
+   transitions could be watched slowly during review; the page ships the reviewed
+   speed instead of asking a reader to pick one. */
+const slowF=1.15;
+const wait=ms=>new Promise(r=>setTimeout(r,ms*slowF));
+const alive=t=>t===token;
+
+/* ---- the status line ----
+   What the AI is doing, in words. The default per state is deliberately plain;
+   any moment that can say something more specific passes its own line to
+   setMark, because "Looking up what the growth tier includes" is a claim a person
+   can check and "Processing" is not. Same rule as the working modes: name the
+   distinction only where it is true. */
+const SAY={typing:'Writing a reply', thinking:'Processing',
+           waiting:'Ready for you',  listening:'Listening'};
+function say(text,opt){
+  opt=opt||{};
+  const s=document.getElementById('hstat');
+  if(!s) return;
+  s.className='hstat'+(opt.bad?' is-bad':'');
+  s.innerHTML = text ? '<span class="what">'+text+'</span>'
+      +(opt.msg?'<span class="msg">'+opt.msg+'</span>':'')
+      +(opt.todo?'<span class="do">'+opt.todo+'</span>':'')
+    : '';
+}
+
+/* ---- failure, in the hero ----
+   The same two classes the Error handling section uses, and deliberately the same:
+   the freeze is applied to whatever was already running rather than drawn, so a
+   stopped lookup still looks like a lookup. Both families are wrapped, because a
+   family switch mid-failure must not resurrect the mark. */
+function failMark(on){
+  [document.getElementById('slotmark'), document.getElementById('heroline')]
+    .forEach(el=>{ if(!el) return;
+      el.classList.toggle('hai-failed',!!on);
+      el.classList.toggle('is-stopped',!!on); });
+}
+
+function setMark(name,label){
+  say(label||SAY[name]||'');
+  if(cur===name) return;
+  const nx=marks[name], pv=cur?marks[cur]:null;
+  if(pv){ pv.classList.remove('on'); pv.classList.add('leaving');
+          setTimeout(()=>pv.classList.remove('leaving'),400*slowF); }
+  nx.classList.add('on'); cur=name;
+  travelTo(homeFor(name));      /* the position is part of the meaning */
+  /* drive the line family's indicator in step, so a family switch mid-demo
+     simply reveals whichever member is already on for the current state. */
+  const hln=document.getElementById('heroline');
+  if(hln) hln.querySelectorAll('.hln').forEach(x=>x.classList.toggle('on', x.dataset.s===name));
+}
+
+function addRow(who,text,opt){
+  opt=opt||{};
+  const d=document.createElement('div');
+  d.className='row row--'+(who==='you'?'you':'ai')+(opt.trunc?' row--trunc':'')+(opt.chunk?' row--chunk':'');
+  d.innerHTML='<span>'+text+'</span>';
+  feed.appendChild(d);
+  const h=d.getBoundingClientRect().height;
+  feed.style.transition='none'; feed.style.translate='0 '+h+'px';
+  requestAnimationFrame(()=>{
+    feed.style.transition='translate .44s var(--in)'; feed.style.translate='0 0';
+    d.classList.add('in');
+  });
+  while(feed.children.length>7) feed.removeChild(feed.firstChild);
+}
+
+/* The caret is drawn rather than real, so it is placed by measuring the text.
+   That measurement is of the whole string, which stops matching the moment the
+   string is wider than the field: the input scrolls to show its tail while the
+   measurement keeps growing, and the caret walks out of the box. Clamping it to
+   the field's inner right edge is what a real caret does in a scrolled input. */
+function placeCaret(text){
+  if(text===null||document.activeElement===probe){ pcaret.classList.remove('on'); return; }
+  meas.textContent=text;
+  const r=probe.getBoundingClientRect(), f=probe.offsetParent.getBoundingClientRect();
+  const pad=12, x0=r.left-f.left+pad;
+  pcaret.style.left=Math.min(x0+meas.getBoundingClientRect().width+1,
+                             r.left-f.left+r.width-pad)+'px';
+  pcaret.style.top=(r.top-f.top+(r.height-16)/2)+'px';
+  pcaret.classList.add('on');
+}
+async function humanTypes(text,cps,t){
+  /* If a real person has taken the field, the script does not type over them.
+     It bows out here rather than fighting for the input — the scripted
+     conversation ends and theirs continues. */
+  for(let i=1;i<=text.length;i++){
+    if(!alive(t)||handedOver){ placeCaret(null); return false; }
+    probe.value=text.slice(0,i); placeCaret(probe.value);
+    await wait(cps);
+  }
+  return alive(t);
+}
+async function aiGenerates(text,msPerWord,t){
+  const words=text.split(' ');
+  livetext.innerHTML='<span id="ln"></span>';
+  const ln=livetext.querySelector('#ln');
+  for(let i=0;i<words.length;i++){
+    if(!alive(t)) return false;
+    const w=document.createElement('span');
+    w.className='wd'; w.textContent=(i?' ':'')+words[i];
+    ln.appendChild(w); requestAnimationFrame(()=>w.classList.add('in'));
+    await wait(msPerWord);
+  }
+  return alive(t);
+}
+/* A long answer in chunks. The mark never leaves typing — this is one turn. */
+async function aiChunks(list,t){
+  for(let i=0;i<list.length;i++){
+    if(!await aiGenerates(list[i],108,t)) return false;
+    await wait(340); if(!alive(t)) return false;
+    livetext.innerHTML=''; addRow('ai',list[i],{chunk:i>0});
+    if(i<list.length-1){ await wait(420); if(!alive(t)) return false; }
+  }
+  return true;
+}
+
+/* ---------- orienting ----------
+   The file's carousel is hardcoded to four labels on an 8s script via
+   nth-child delays. Driven by a real conversation the label set changes, so
+   the rotation has to be JS. The motion is what carries over: out in .34s and
+   up, in from below in .44s, Next held faint at .55. */
+const TICKSVG='<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1.8 6.4 4.5 9.1 10.2 3"/></svg>';
+let PY={settled:[], now:'', next:''}, pyIx=0, pyTimer=null;
+
+function paintRing(i){
+  segs.forEach((sg,n)=>{
+    sg.classList.toggle('is-settled', n+1<=i);
+    sg.classList.toggle('is-now', n+1===i+1);
+    sg.classList.toggle('is-intended', n+1===i+2);
+  });
+  /* the line family's horizontal timeline carries the same five stages */
+  const dots=[...document.querySelectorAll('.hai-linestage .ls-dot')];
+  dots.forEach((d,n)=>{
+    d.classList.toggle('is-settled', n+1<=i);
+    d.classList.toggle('is-now', n+1===i+1);
+    d.classList.toggle('is-intended', n+1===i+2);
+  });
+  const fill=document.querySelector('.hai-linestage .ls-fill');
+  if(fill && dots[i]) fill.setAttribute('x2', dots[i].getAttribute('cx'));
+}
+function pyFrames(){
+  const f=PY.settled.map(l=>({html:TICKSVG+'<span>'+l+'</span>'}));
+  f.push({html:'<em>Now:</em>'+PY.now});
+  f.push({html:'<em>Next:</em><span class="guess" id="gs">'+PY.next+'</span>', cls:'is-next'});
+  return f;
+}
+function pyShow(k){
+  const host=document.getElementById('pylabels');
+  const f=pyFrames(); if(!f.length) return;
+  pyIx=k%f.length;
+  const old=host.querySelector('.pyl:not(.leaving)');
+  if(old){ old.classList.add('leaving'); setTimeout(()=>old.remove(),400*slowF); }
+  const e=document.createElement('span');
+  e.className='pyl entering'+(f[pyIx].cls?' '+f[pyIx].cls:'');
+  e.innerHTML=f[pyIx].html;
+  host.appendChild(e);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>e.classList.remove('entering')));
+  /* the line timeline lights and pulses the dot that matches the label now
+     showing, so the dots move in step with the single rotating label. */
+  document.querySelectorAll('.hai-linestage .ls-dot')
+    .forEach((d,n)=>d.classList.toggle('is-active', n===pyIx));
+}
+function pyRun(){
+  if(pyTimer) clearInterval(pyTimer);
+  if(RM){ pyShow(PY.settled.length); return; }
+  pyShow(0);
+  pyTimer=setInterval(()=>pyShow(pyIx+1), 1900);
+}
+function pyAdvance(i,now,next){
+  if(PY.now) PY.settled.push(PY.now);
+  PY.now=now; PY.next=next; paintRing(i);
+  pyShow(PY.settled.length);          /* land on the new Now immediately */
+  pyRun();
+}
+function reviseNext(text){
+  PY.next=text;
+  const g=document.getElementById('gs');
+  if(!g){ return; }
+  const gone=g.lastElementChild||(()=>{const s=document.createElement('span');
+    s.textContent=g.textContent;g.textContent='';g.appendChild(s);return s;})();
+  gone.classList.add('g-leaving');
+  setTimeout(()=>gone.remove(),400*slowF);
+  const nx=document.createElement('span');
+  nx.className='g-entering'; nx.textContent=text;
+  nx.style.position='absolute'; nx.style.left='0'; nx.style.top='0';
+  g.appendChild(nx);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    nx.classList.remove('g-entering');
+    setTimeout(()=>{nx.style.position='';nx.style.left='';nx.style.top='';},460*slowF);
+  }));
+}
+
+/* ---------- the notes ----------
+   What a rep would be writing down while listening. Lines appear as the
+   conversation establishes them, never before. */
+function note(k,v){
+  const d=document.createElement('div');
+  d.className='note';
+  d.innerHTML='<span class="k">'+k+'</span><span class="v">'+v+'</span>';
+  document.getElementById('heroNotes').appendChild(d);
+  requestAnimationFrame(()=>d.classList.add('in'));
+}
+
+/* The rows that were asked for. A row does not merely tick -- it takes the value
+   the conversation gave it, so the fact lives in one place instead of being ticked
+   here and written again below. The count is read off the filled rows, the same way
+   the notes button reads the list. Budget is never volunteered, so the panel
+   honestly rests at three of four. */
+function fillSlot(id,val){
+  document.querySelectorAll('#req .reqrow[data-slot="'+id+'"], #reqspine .rsrow[data-slot="'+id+'"]')
+    .forEach(r=>{
+      r.classList.add('filled');
+      const v=r.querySelector('.reqval>span,.rsval>span');
+      if(v&&val) v.textContent=val;
+    });
+  const c=document.getElementById('reqn');
+  if(c) c.textContent=document.querySelectorAll('#req .reqrow.filled').length+' / 4';
+}
+
+/* ---------- the conversation ---------- */
+const OPEN='hi, this is Dana from Trellis Retail — we’re a 40-agent support team, mostly voice';
+
+async function run(){
+  const t=++token;
+
+  setMark('listening'); await wait(560); if(!alive(t))return;
+  if(!await humanTypes(OPEN,33,t)) return;
+  await wait(400); if(!alive(t))return;
+  probe.value=''; placeCaret(null); addRow('you',OPEN);
+  await wait(220); note('Contact','Dana');
+  await wait(260); fillSlot('company','Trellis Retail');
+  await wait(260); fillSlot('team','40 agents · voice-led');
+  if(!alive(t))return;
+
+  await wait(150); setMark('thinking'); await wait(1150); if(!alive(t))return;
+  setMark('typing');                    await wait(340); if(!alive(t))return;
+  if(!await aiChunks([
+    'Voice-led at forty agents — the win is usually deflecting calls before they reach a queue.',
+    'Two things would tell me a lot: your average handle time, and how much of it goes on ID and verification.'
+  ],t)) return;
+
+  await wait(300); setMark('waiting'); await wait(900); if(!alive(t))return;
+  setMark('listening'); await wait(260); if(!alive(t))return;
+  if(!await humanTypes('AHT is around six minutes, maybe half is verification',33,t)) return;
+  await wait(380); if(!alive(t))return;
+  probe.value=''; placeCaret(null); addRow('you','AHT is around six minutes, maybe half is verification');
+  await wait(300); fillSlot('need','Handle time · ~6 min, half on verification');
+  if(!alive(t))return;
+
+  await wait(150); setMark('thinking'); await wait(1150); if(!alive(t))return;
+  setMark('typing');                    await wait(320); if(!alive(t))return;
+  if(!await aiChunks(['Half of six minutes on verification is the biggest single number here.'],t)) return;
+
+  /* ---- stage advance 1 ---- */
+  stageIx=2; pyAdvance(stageIx,'What it costs','Booking a time');
+  await wait(500); if(!alive(t))return;
+
+  setMark('typing'); await wait(340); if(!alive(t))return;
+  if(!await aiGenerates('At forty agents on voice you’d be on the growth tier',108,t)) return;
+  await wait(420); if(!alive(t))return;
+
+  /* ---- YIELD — cut in mid-chunk. The half line stays. ---- */
+  livetext.innerHTML=''; addRow('ai','At forty agents on voice you’d be on the growth tier—',{trunc:true});
+  setMark('listening'); await wait(300); if(!alive(t))return;
+  if(!await humanTypes('what’s actually included at that tier',33,t)) return;
+  await wait(380); if(!alive(t))return;
+  probe.value=''; placeCaret(null); addRow('you','what’s actually included at that tier');
+
+  /* the one moment in the script where the AI can say something a person could
+     check, rather than the generic word */
+  await wait(150); setMark('thinking','Looking up what the growth tier includes');
+  await wait(1500); if(!alive(t))return;
+
+  /* ---- and it fails. ----
+     Retrieval is the honest failure to show: it is the one kind of work the page
+     says belongs to someone else, so a failure there is a system being out of
+     reach rather than the AI being broken. The mark stops where it stood and the
+     words do the rest -- what stopped, what it means for her, one thing she can
+     do. That is Nielsen's ninth heuristic, and it is the obligation this page
+     stated and did not meet until now. */
+  failMark(true);
+  say('Couldn’t reach the pricing system',{bad:true,
+      msg:'I can send you the exact terms straight after this.', todo:'Try again'});
+  await wait(3600); if(!alive(t))return;
+
+  /* ---- and recovers. The conversation carries on rather than ending on the
+     failure: an error that cannot be got past is a different design problem. ---- */
+  failMark(false);
+  setMark('thinking','Trying again');
+  await wait(1400); if(!alive(t))return;
+  setMark('typing');                    await wait(340); if(!alive(t))return;
+  if(!await aiChunks([
+    'Growth covers unlimited voice minutes, the verification bot and live agent assist.',
+    'It’s billed per seat rather than per minute — so your costs stop moving with call volume.'
+  ],t)) return;
+
+  await wait(300); note('Tier','Growth · billed per seat');
+  if(!alive(t))return;
+
+  /* ---- stage advance 2 ---- */
+  stageIx=3; pyAdvance(stageIx,'Booking a time','Getting set up');
+  await wait(450); if(!alive(t))return;
+
+  setMark('typing'); await wait(320); if(!alive(t))return;
+  if(!await aiChunks(['I can hold thirty minutes with a solutions engineer this week.'],t)) return;
+
+  await wait(260); note('Next step','30 min with a solutions engineer');
+  await wait(300); if(!alive(t))return;
+  setMark('waiting');
+
+  /* the forecast thinks again */
+  await wait(2000); if(!alive(t))return;
+  reviseNext('A technical review');
+}
+
+/* ---- the interruption: transmit, not prepare ----
+   Typing is not communicating. People type while reading, delete, change their
+   minds; none of that has been said to anyone yet, so none of it should stop an
+   answer in flight. A keystroke therefore does one thing only — it takes the
+   field away from the script — and the reply keeps running. Send is the
+   interruption. In voice the same rule lands a beat earlier, at speech onset,
+   because speaking is sending.
+
+   What a keystroke should *show* is a separate question and deliberately not
+   answered here: the AI has to notice the person is there without obeying them,
+   and nothing on this page does that yet. */
+probe.addEventListener('keydown',e=>{
+  probe.dataset.human='1';
+  if(e.key!=='Enter'||e.isComposing) return;
+  e.preventDefault();
+  const said=probe.value.trim();
+  if(said) transmit(said);
+});
+probe.addEventListener('input',()=>{
+  if(!probe.dataset.human) return;
+  handedOver=true;      /* the script stops typing as the person */
+  placeCaret(null);     /* the drawn caret gives way to the real one */
+});
+probe.addEventListener('blur',()=>setTimeout(()=>delete probe.dataset.human,50));
+
+/* Send. Everything in flight stops here, and the half-finished reply stays in
+   the transcript ending on a dash — the interruption is carried by the message,
+   which is where a person looks to see whether it worked. */
+function transmit(said){
+  token++;
+  failMark(false);      /* sending clears a failure the person has read past */
+  const cut=livetext.textContent.trim();
+  livetext.innerHTML='';
+  if(cut) addRow('ai',cut+'—',{trunc:true});
+  addRow('you',said);
+  probe.value=''; placeCaret(null);
+  setMark('listening');
+  clearTimeout(probe._t);
+  probe._t=setTimeout(()=>setMark('thinking'),900);
+}
+
+function wire(id,fn){
+  const host=document.getElementById(id); if(!host) return;
+  host.addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b) return;
+    [...e.currentTarget.children].forEach(o=>o.setAttribute('aria-pressed',o===b));
+    fn(b.dataset.v);
+  });
+}
+/* Which states belong at the input box rather than up in the conversation.
+   Typing and working are a turn in flight — they live with the messages.
+   Waiting and listening are both about the person, and the person is at the
+   input box: waiting is the AI holding the floor open for you, listening is it
+   receiving what you are giving. Neither has anything to do with the reply
+   above, so neither should sit beside it. */
+let HOP='waitlisten';
+const atFoot=n => HOP==='never' ? false
+               : HOP==='waitlisten' ? (n==='waiting'||n==='listening')
+               : n==='waiting';
+
+function travelTo(host){
+  const m=document.getElementById('slotmark').parentElement;
+  if(m===host||!host) return;
+  const mk=document.getElementById('slotmark');
+  const a=mk.getBoundingClientRect();
+  /* The conversation's home closes as the mark leaves it and opens as the mark
+     returns — set before the arrival is measured, so the mark is aimed at where
+     it will actually rest rather than at where the open band used to put it. */
+  const inl=document.getElementById('hInline');
+  if(inl) inl.classList.toggle('is-away', host!==inl);
+  host.appendChild(mk);
+  const b=mk.getBoundingClientRect();
+  const dx=a.left-b.left, dy=a.top-b.top;
+  if(RM||(!dx&&!dy)) return;
+  mk.style.transition='none'; mk.style.translate=dx+'px '+dy+'px';
+  requestAnimationFrame(()=>{
+    mk.style.transition='translate .44s var(--in)'; mk.style.translate='0 0';
+  });
+}
+function homeFor(n){ return document.getElementById(atFoot(n)?'hFoot':'hInline'); }
+wire('markseg',v=>{ HOP=v; travelTo(homeFor(cur||'waiting')); });
+wire('themeseg',v=>frame.dataset.t=v);
+wire('youseg',  v=>document.body.dataset.you=v);
+
+function reset(){
+  token++; feed.innerHTML=''; livetext.innerHTML=''; probe.value=''; placeCaret(null);
+  handedOver=false; delete probe.dataset.human; clearTimeout(probe._t); say(''); failMark(false);
+  document.getElementById('heroNotes').innerHTML='';
+  document.querySelectorAll('#req .reqrow, #reqspine .rsrow').forEach(r=>{
+    r.classList.remove('filled');
+    const v=r.querySelector('.reqval>span,.rsval>span'); if(v) v.textContent='';
+  });
+  {const rc=document.getElementById('reqn'); if(rc) rc.textContent='0 / 4';}
+  document.getElementById('pylabels').innerHTML='';
+  stageIx=1; PY={settled:['Hello'], now:'What you need', next:'What it costs'};
+  paintRing(1); pyRun();
+}
+document.getElementById('replay').addEventListener('click',()=>{ reset(); run(); });
+
+/* ---------- the notes drawer ----------
+   Only ever reachable at the narrow layout, because that is the only place the
+   CSS gives it a closed state -- so this needs no width test of its own. The
+   count is read off the notes themselves rather than kept as a second tally:
+   there is one source for what has been written down, and the button reports it.
+
+   Escape closes, the scrim closes, and a replay closes -- that last one because
+   the notes it was showing have just been thrown away, and a drawer left open
+   over an empty list is a worse answer than being put back where you were. */
+(function(){
+  const btn=document.getElementById('notesbtn'), drawer=document.getElementById('notesCard'),
+        scrim=document.getElementById('notesscrim'), shut=document.getElementById('notesx'),
+        list=document.getElementById('heroNotes'), count=document.getElementById('notesn');
+  if(!btn||!drawer) return;
+  const set=open=>{
+    frame.classList.toggle('notes-open',open);
+    btn.setAttribute('aria-expanded',String(open));
+  };
+  btn.addEventListener('click',()=>set(!frame.classList.contains('notes-open')));
+  if(shut)  shut.addEventListener('click',()=>set(false));
+  if(scrim) scrim.addEventListener('click',()=>set(false));
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') set(false); });
+  document.getElementById('replay').addEventListener('click',()=>set(false));
+  if(list&&count){
+    /* The button carries the SAME count as the panel header, and it counts only the
+       rows that were asked for. It used to add the volunteered facts in and show one
+       total, which put two different numbers on the same notes a few inches apart --
+       and quietly contradicted the rule the component is built on: the count speaks
+       for the plan, the list is longer than the count. There is no denominator for
+       things you did not know to ask, so they cannot be counted; they can only be
+       shown. Read off the rows themselves rather than kept as a second tally, so the
+       button cannot drift from the header. Blank until the first row fills, because
+       "0 / 4" before anything has been said reads as a failure rather than a start. */
+    const req=document.getElementById('req');
+    const tally=()=>{
+      const n=document.querySelectorAll('#req .reqrow.filled').length;
+      count.textContent = n ? n+' / 4' : '';
+    };
+    new MutationObserver(tally).observe(list,{childList:true});
+    if(req) new MutationObserver(tally).observe(req,{subtree:true,attributes:true,attributeFilter:['class']});
+    tally();
+  }
+})();
+
+reset();
+if(RM){
+  PY={settled:['Hello','What you need'],now:'What it costs',next:'Booking a time'};
+  paintRing(3); pyRun(); setMark('waiting');
+  fillSlot('company','Trellis Retail');
+  fillSlot('team','40 agents · voice-led');
+  fillSlot('need','Handle time · ~6 min, half on verification');
+  note('Contact','Dana');
+  note('Tier','Growth · billed per seat');
+  note('Next step','30 min with a solutions engineer');
+  addRow('you','what’s actually included at that tier');
+  addRow('ai','It’s billed per seat rather than per minute — so your costs stop moving with call volume.');
+}else{
+  setTimeout(run,700);
+}
+
+}
+/* ---- carousel: mounts one concept at a time into a stage ----
+   Only the visible concept is in the document, so the loops that are not being
+   watched are not running. Switching remounts, which restarts the loop at its
+   first act -- the right behaviour for a looping animation. */
+function buildCarousel(slot, asset){
+  const slides = asset.slides;
+  const label  = asset.title || '';
+  slot.removeAttribute('role'); slot.removeAttribute('aria-label');
+
+  const root = document.createElement('div');
+  root.className = 'carousel';
+  root.innerHTML =
+    '<div class="carousel-viewport" role="tabpanel"></div>' +
+    '<div class="carousel-bar">' +
+      '<button class="carousel-step" type="button" data-step="-1" aria-label="Previous concept">&#8592;</button>' +
+      '<div class="carousel-tabs" role="tablist"></div>' +
+      '<button class="carousel-step" type="button" data-step="1" aria-label="Next concept">&#8594;</button>' +
+      '<span class="carousel-count"></span>' +
+    '</div>';
+
+  const viewport = root.querySelector('.carousel-viewport');
+  const tabs     = root.querySelector('.carousel-tabs');
+  const count    = root.querySelector('.carousel-count');
+  let index = 0;
+
+  slides.forEach((s, i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'carousel-tab'; b.setAttribute('role','tab');
+    b.innerHTML = '<span class="k">' + (s.key || String.fromCharCode(65 + i)) + '</span>' + s.label;
+    b.addEventListener('click', () => show(i));
+    tabs.appendChild(b);
+  });
+
+  let teardown = null;
+  let persistent = null;
+  function show(i){
+    index = (i + slides.length) % slides.length;
+    const s = slides[index];
+    /* A persistent slide is mounted once and switched by attribute, so a running
+       demo is not restarted every time the family is changed. */
+    if(asset.persistent !== undefined){
+      if(!persistent){
+        persistent = document.createElement('div');
+        persistent.className = 'mark-host hero-host';
+        persistent.setAttribute('data-you','surface');  /* v2.1 gated the reply bubble on this */
+        persistent.innerHTML = asset.persistent;
+        viewport.replaceChildren(persistent);
+        if(asset.onMount) asset.onMount(persistent);
+      }
+      if(asset.onSelect) asset.onSelect(persistent, s);
+    } else {
+    if(teardown){ teardown(); teardown = null; }
+    if(s.markup !== undefined){
+      teardown = mountMark(viewport, s);
+    } else {
+      const frame = document.createElement('iframe');
+      frame.title = label + ' — ' + s.label;
+      frame.setAttribute('loading','lazy');
+      frame.setAttribute('sandbox','allow-scripts');
+      frame.srcdoc = DEMO_DOCS[s.doc].replace('__TARGET__', JSON.stringify(s.target));
+      viewport.replaceChildren(frame);
+    }
+    }
+    [...tabs.children].forEach((b, k) => {
+      b.setAttribute('aria-selected', k === index ? 'true' : 'false');
+      b.tabIndex = k === index ? 0 : -1;
+    });
+    count.textContent = (index + 1) + ' / ' + slides.length;
+  }
+
+  root.querySelectorAll('.carousel-step').forEach(b => {
+    b.addEventListener('click', () => show(index + Number(b.dataset.step)));
+  });
+  tabs.addEventListener('keydown', e => {
+    if(e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    e.preventDefault(); show(index + (e.key === 'ArrowRight' ? 1 : -1));
+    tabs.children[index].focus();
+  });
+
+  slot.replaceChildren(root);
+  show(0);
+}
+
+// Finished examples replace only their named stage; text and story order remain independent.
+// A stage may show alternative representations together; no family is selected by this structure.
+// Example: 'activity-generation': {type:'video',src:'assets/generation.mp4',title:'Generation'}
+/* Badge zoom per state, carried over from the source page's controller. */
+const ZB=[2.2,2.2,2.2,2.2,2.0,1.15,2.2,1.35,1.1];
+
+/* The nine states. Badge and Line are the visual families; the two sound-led
+   families (Music, Robot) are not shown here -- these pages are silent. */
+const ACTIVITY_STATES=[
+ ['activity-generation',    'Generation'],
+ ['activity-working',       'Working'],
+ ['activity-waiting',       'Waiting'],
+ ['activity-listening',     'Listening'],
+ ['activity-handover',      'Handover'],
+ ['activity-yielding',      'Yielding'],
+ ['activity-error-handling','Error handling'],
+ ['activity-orienting',     'Orienting'],
+ ['activity-notes',         'Notes']
+];
+const DEMO_ASSETS={};
+
+/* The hero is mounted once and switched by attribute: #frame carries its own
+   family flag, so flipping it reveals whichever mark is already running rather
+   than restarting the exchange. */
+DEMO_ASSETS['activity-hero']={type:'carousel',title:'In context',
+  persistent:HERO_MARKUP,
+  onMount:function(host){ HERO_START(host); },
+  onSelect:function(host,s){ const f=host.querySelector('#frame'); if(f) f.dataset.fam=s.fam; },
+  slides:[{key:'01',label:'Badge',fam:'0'},{key:'02',label:'Line',fam:'1'}]};
+
+ACTIVITY_STATES.forEach(([slot,title],i)=>{
+ DEMO_ASSETS[slot]={type:'carousel',title:title,slides:[
+   {key:'01',label:'Badge',markup:COMP['0-'+i].markup,zoom:ZB[i],index:i},
+   {key:'02',label:'Line', markup:COMP['1-'+i].markup,zoom:1,     index:i}]};
+});
+for(const [id,asset] of Object.entries(DEMO_ASSETS)){
+ const slot=document.querySelector('[data-demo-slot="'+id+'"]');if(!slot)continue;
+  if(asset.type==='carousel'){buildCarousel(slot,asset);continue;}
+const tag={image:'img',video:'video',audio:'audio',frame:'iframe'}[asset.type];if(!tag)continue;
+ const media=document.createElement(tag);media.src=asset.src;
+ if(tag==='img')media.alt=asset.title||id;
+ if(tag==='iframe'){media.title=asset.title||id;media.setAttribute('sandbox','allow-scripts');}
+ if(tag==='audio'||tag==='video'){media.controls=true;media.preload='metadata';media.setAttribute('aria-label',asset.title||id);}
+ if(tag==='video')media.playsInline=true;
+ slot.removeAttribute('role');slot.removeAttribute('aria-label');slot.replaceChildren(media);
+}
+const folds=[...document.querySelectorAll('[data-story-step]')];const activeLink=document.querySelector('.story-nav [aria-current="page"]');const position=document.getElementById('story-position');let queued=false;
+function updateStory(){
+ queued=false;
+ const header=document.querySelector('.story-header').getBoundingClientRect().height;
+ const target=header+(innerHeight-header)*.45;
+ let index=0;for(let i=0;i<folds.length;i++){if(folds[i].getBoundingClientRect().top<=target)index=i;}
+ const fold=folds[index];if(!fold)return;
+ const text=(index+1)+' / '+folds.length+' · '+fold.dataset.storyStep;
+ if(position.textContent!==text)position.textContent=text;
+ const rect=fold.getBoundingClientRect();const fraction=Math.max(0,Math.min(1,(target-rect.top)/Math.max(1,rect.height)));
+ activeLink.style.setProperty('--progress',((index+fraction)/folds.length*100)+'%');
+}
+addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(updateStory);}},{passive:true});addEventListener('resize',updateStory);updateStory();
+</script></body></html>
