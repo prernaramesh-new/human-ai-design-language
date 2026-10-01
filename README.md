@@ -11,11 +11,11 @@ Conversational AI quietly dropped things interface design already knew how to do
 | Question | The problem | Status |
 |---|---|---|
 | **What is it doing?** | When AI goes quiet, people can't tell whether it's working, waiting, or stuck. | Nine states, two visual families |
-| **What can it see?** | People need to know what AI can use, and what stays private. | Three of six studies |
-| **Where is my work?** | Returning to a task shouldn't mean explaining everything again. | Not yet built |
+| **What can it see?** | People need to know what AI can use, and what stays private. | Six studies, fifteen concepts |
+| **Where is my work?** | Returning to a task shouldn't mean explaining everything again. | Five of six parts; the sixth, AI for collaboration, to come |
 | **Why do I not want to talk to it?** | When AI makes an interaction feel like effort, people stop using it. | Research done, design not started |
 
-The empty sections are deliberate and marked as such. This is a first public draft, not a finished system.
+The empty sections are deliberate and marked as such. Where a study shows several concepts, they are presented as options, not a recommendation. This is a first public draft, not a finished system.
 
 ## What we'd like comments on
 
